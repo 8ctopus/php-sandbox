@@ -13,10 +13,13 @@ RUN apk add \
     nano \
 #    openssh-client \
     tar \
-    unzip \
-    zsh
+    unzip
 
-# configure zsh
+# install and configure zsh
+RUN apk add \
+    zsh \
+    zsh-vcs
+
 ADD --chown=root:root include/zshrc /etc/zsh/zshrc
 
 # install php
