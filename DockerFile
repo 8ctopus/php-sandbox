@@ -1,0 +1,54 @@
+FROM alpine:3.11
+
+# expose ports
+EXPOSE 80/tcp
+EXPOSE 443/tcp
+
+# install console tools
+RUN apk add \
+    bash \
+    curl \
+    git \
+#    mysql-client \
+    nano \
+#    openssh-client \
+    tar \
+    unzip \
+    zsh
+
+# configure zsh
+ADD --chown=root:root include/zshrc /etc/zsh/zshrc
+
+# install php
+RUN apk add \
+    php7-apache2 \
+    php7-bcmath \
+    php7-common \
+    php7-ctype \
+    php7-dom \
+    php7-fileinfo \
+    php7-json \
+    php7-mbstring \
+    php7-openssl \
+    php7-pdo \
+    php7-pdo_mysql \
+    php7-session \
+    php7-tokenizer \
+    php7-xml \
+    php7-xmlwriter
+
+# install composer
+RUN apk add \
+    composer
+
+# install apache
+RUN apk add \
+    apache2
+
+# change website default dir
+RUN sed -i 's|/var/www/localhost/htdocs|/var/www/|g' /etc/apache2/httpd.conf
+
+ADD --chown=root:root include/index.php /var/www/index.php
+
+# set working dir
+WORKDIR /var/www/
