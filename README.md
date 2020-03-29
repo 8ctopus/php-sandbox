@@ -19,3 +19,11 @@ Both images are based on Alpine linux.
 Run the two php scripts in
 
     http://localhost:8000/
+
+# Get console to containers
+
+## web container
+    docker exec -it dev-www zsh
+
+## database container
+    docker exec -it dev-db zsh
