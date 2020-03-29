@@ -28,6 +28,7 @@ RUN apk add \
     php7-fileinfo \
     php7-json \
     php7-mbstring \
+    php7-mysqli \
     php7-openssl \
     php7-pdo \
     php7-pdo_mysql \
@@ -52,10 +53,10 @@ RUN apk add \
     apache2
 
 # change website default dir
-RUN sed -i 's|/var/www/localhost/htdocs|/var/www/|g' /etc/apache2/httpd.conf
+RUN sed -i 's|/var/www/localhost/htdocs|/var/www/site/|g' /etc/apache2/httpd.conf
 
 # add test page
-ADD --chown=root:root include/index.php /var/www/index.php
+ADD --chown=root:root include/index.php /var/www/site/index.php
 
 # add entry point script
 ADD --chown=root:root include/start.sh /start.sh
