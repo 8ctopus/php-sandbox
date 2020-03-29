@@ -1,13 +1,14 @@
-MariaDB on Alpine linux
-
-how to start the container
+# start container
 
     docker run -it -p 3306:3306 8ctopus/mariadb
 
-how to connect to the database inside the container
+# connect to database
 
     hostname: localhost
     user: root
     password: 123
     port: 3306
 
+# build docker image
+
+    docker build -t 8ctopus/mariadb:latest .

@@ -1,9 +1,13 @@
 # Project description
-A lightweight docker image based on Alpine for web laravel development.
 
-# build docker image
-    docker build -t 8ctopus/laravel:latest .
+A lightweight web development environment based on Docker.
 
-# run container
-    docker run -it -p 8000:80 8ctopus/laravel zsh
-    httpd
+The setup consists of two images:
+- web server: apache2, php with xdebug
+- database server: mariadb
+
+Both images are based on Alpine linux.
+
+# How to use
+
+    docker-compose up
