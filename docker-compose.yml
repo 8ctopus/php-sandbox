@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  mariadb:
+    image: '8ctopus/mariadb:latest'
+    container_name: dev-db
+    ports:
+      - 3306:3306
+    entrypoint: >
+      sh -c "rc-service mariadb start &&
+             mysql < /init.sql &&
+             tail -f /dev/null"
+  web:
+    image: 8ctopus/web:latest
+    container_name: dev-www
+    restart: always
+    ports:
+      - 8000:80
+    links:
+      - mariadb
+    entrypoint: httpd -X
