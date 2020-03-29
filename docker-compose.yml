@@ -13,9 +13,14 @@ services:
   web:
     image: 8ctopus/web:latest
     container_name: dev-www
-    restart: always
     ports:
       - 8000:80
     links:
       - mariadb
+    restart: always
+    volumes:
+      # development directory
+      - ./dev/:/var/www/site/
+      # expose apache logs to host
+      - ./log/:/var/log/apache2/
     entrypoint: httpd -X
