@@ -6,12 +6,8 @@ EXPOSE 443/tcp
 
 # install console tools
 RUN apk add \
-    bash \
     curl \
-    git \
-#    mysql-client \
     nano \
-#    openssh-client \
     tar \
     unzip
 
