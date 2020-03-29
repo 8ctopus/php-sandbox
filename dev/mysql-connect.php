@@ -49,3 +49,5 @@ if ($result->num_rows === 0)
 
 echo('<pre>');
 print_r($result->fetch_assoc());
+
+echo('<h1>It works!<h1>');
