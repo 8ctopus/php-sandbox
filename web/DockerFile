@@ -57,5 +57,10 @@ RUN sed -i 's|/var/www/localhost/htdocs|/var/www/|g' /etc/apache2/httpd.conf
 # add test page
 ADD --chown=root:root include/index.php /var/www/index.php
 
+# add entry point script
+ADD --chown=root:root include/start.sh /start.sh
+
 # set working dir
 WORKDIR /var/www/
+
+ENTRYPOINT /start.sh
