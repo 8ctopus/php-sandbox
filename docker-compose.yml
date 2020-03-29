@@ -7,7 +7,7 @@ services:
     ports:
       - 3306:3306
     entrypoint: >
-      sh -c "rc-service mariadb start &&
+      sh -c "rc-service mariadb restart &&
              mysql < /init.sql &&
              tail -f /dev/null"
   web:
