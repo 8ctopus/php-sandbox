@@ -8,6 +8,14 @@ The setup consists of two images:
 
 Both images are based on Alpine linux.
 
-# How to use
+# Start development environment
 
+    git clone https://github.com/8ctopus/webdev.git
+    cd webdev
     docker-compose up
+
+# Test development environment
+
+Run the two php scripts in
+
+    http://localhost:8000/
