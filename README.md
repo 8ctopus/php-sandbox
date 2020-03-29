@@ -23,7 +23,7 @@ Run the two php scripts in
 # Get console to containers
 
 ## web container
-    docker exec -it dev-www zsh
+    docker exec -it dev-web zsh
 
 ## database container
     docker exec -it dev-db zsh
