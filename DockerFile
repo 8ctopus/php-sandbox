@@ -40,6 +40,13 @@ RUN apk add \
     php7-xml \
     php7-xmlwriter
 
+# install xdebug
+RUN apk add \
+    php7-pecl-xdebug
+
+# configure xdebug
+ADD --chown=root:root include/xdebug.ini /etc/php7/conf.d/xdebug.ini
+
 # install composer
 RUN apk add \
     composer
@@ -51,6 +58,7 @@ RUN apk add \
 # change website default dir
 RUN sed -i 's|/var/www/localhost/htdocs|/var/www/|g' /etc/apache2/httpd.conf
 
+# add test page
 ADD --chown=root:root include/index.php /var/www/index.php
 
 # set working dir
