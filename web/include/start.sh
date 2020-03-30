@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # start apache2
 echo ""
 echo "Start container web server..."
