@@ -50,7 +50,7 @@ stop_container()
 }
 
 # wait for termination signal
-trap stop_container INT SIGINT SIGQUIT SIGTERM SIGABRT
+trap stop_container SIGTERM
 
 while true; do
     sleep 3
