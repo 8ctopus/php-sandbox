@@ -1,14 +1,16 @@
+echo "..."
+echo "Start container database..."
+
 # check if database exists
 if [ -e /var/lib/mysql/ib_logfile0 ]
 then
-    echo "Database already exists"
+    echo "Database exists"
 
     # start service mariadb
     echo "Start service mariadb..."
     rc-service mariadb restart
 
-    echo "-----------------------------------------------"
-    echo "Database ready for connections"
+    echo "Start container database - OK - ready for connections"
 else
     # create database
     echo "Install database..."
@@ -24,23 +26,26 @@ else
 
     echo "Install database - OK"
 
-    echo "-----------------------------------------------"
-    echo "Database ready for connections"
-    echo "host: localhost"
-    echo "port: 3306"
-    echo "user: root"
-    echo "password: 123"
+    echo "Start container database - OK - ready for connections"
 fi
+
+echo "-----------------------------------------------"
+echo "host: localhost"
+echo "port: 3306"
+echo "user: root"
+echo "password: 123"
+echo "-----------------------------------------------"
 
 # https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers/
 # https://stackoverflow.com/questions/59521712/catching-sigterm-from-alpine-image
 stop_container()
 {
     echo ""
-    echo "Received container stop signal"
+    echo "Stop container database... - received SIGTERM signal"
     echo "Stop service mariadb ..."
     rc-service mariadb stop
     echo "Stop service mariadb - OK"
+    echo "Stop container database - OK"
     exit
 }
 
@@ -48,7 +53,6 @@ stop_container()
 trap stop_container INT SIGINT SIGQUIT SIGTERM SIGABRT
 
 while true; do
-    sleep 5
+    sleep 3
     echo -n "."
 done
-
