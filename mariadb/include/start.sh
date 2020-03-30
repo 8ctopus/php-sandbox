@@ -3,16 +3,19 @@ if [ -e /var/lib/mysql/ib_logfile0 ]
 then
     echo "Database already exists"
 
-    # start mariadb service
-    echo "Start mariadb service..."
+    # start service mariadb
+    echo "Start service mariadb..."
     rc-service mariadb restart
+
+    echo "-----------------------------------------------"
+    echo "Database ready for connections"
 else
     # create database
     echo "Install database..."
     mysql_install_db --user=mysql --datadir=/var/lib/mysql
 
-    # start mariadb service
-    echo "Install database - start mariadb service..."
+    # start service mariadb
+    echo "Install database - start service mariadb..."
     rc-service mariadb start
 
     # configure database
@@ -20,8 +23,9 @@ else
     mysql < /init.sql
 
     echo "Install database - OK"
+
     echo "-----------------------------------------------"
-    echo "Database info"
+    echo "Database ready for connections"
     echo "host: localhost"
     echo "port: 3306"
     echo "user: root"
