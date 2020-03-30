@@ -11,7 +11,7 @@ echo "Start container web server - OK - Apache ready for connections"
 stop_container()
 {
     echo ""
-    echo "Stop container web server... - received termination signal"
+    echo "Stop container web server... - received SIGTERM signal"
 
     # stop apache2
     echo "Stop apache2..."
@@ -22,7 +22,8 @@ stop_container()
 }
 
 # catch termination signals
-trap stop_container INT SIGINT SIGQUIT SIGTERM SIGABRT
+# https://unix.stackexchange.com/questions/317492/list-of-kill-signals
+trap stop_container SIGTERM
 
 # infinite loop, will only stop on termination signal
 while true; do
