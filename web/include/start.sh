@@ -6,7 +6,7 @@ echo "Start container web server..."
 httpd -k start
 
 echo "-----------------------------------------------"
-echo "Start container web server - OK - Apache ready for connections"
+echo "Start container web server - OK - ready for connections"
 
 stop_container()
 {
@@ -16,6 +16,7 @@ stop_container()
     # stop apache2
     echo "Stop apache2..."
     httpd -k stop
+    echo "Stop apache2 - OK"
 
     echo "Stop container web server - OK"
     exit
@@ -27,6 +28,6 @@ trap stop_container SIGTERM
 
 # infinite loop, will only stop on termination signal
 while true; do
-    sleep 5
+    sleep 3
     echo -n "."
 done
