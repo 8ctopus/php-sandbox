@@ -32,5 +32,23 @@ else
     echo "password: 123"
 fi
 
-# wait forever
-tail -f /dev/null
+# https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers/
+# https://stackoverflow.com/questions/59521712/catching-sigterm-from-alpine-image
+stop_container()
+{
+    echo ""
+    echo "Received container stop signal"
+    echo "Stop service mariadb ..."
+    rc-service mariadb stop
+    echo "Stop service mariadb - OK"
+    exit
+}
+
+# wait for termination signal
+trap stop_container INT SIGINT SIGQUIT SIGTERM SIGABRT
+
+while true; do
+    sleep 5
+    echo -n "."
+done
+
