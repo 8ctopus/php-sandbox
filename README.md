@@ -1,10 +1,10 @@
 ## Project description
 
-A lightweight web development environment based on Docker.
+A super lightweight web development environment based on Docker (253Mb).
 
 The setup consists of two images:
-- web server: apache2, php with xdebug
-- database server: mariadb
+- web server: apache2, php with xdebug - 65Mb
+- database server: mariadb - 188Mb
 
 Both images are based on Alpine linux.
 
