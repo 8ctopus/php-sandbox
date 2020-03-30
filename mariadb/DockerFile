@@ -27,16 +27,9 @@ RUN apk add \
     mariadb \
     mariadb-client
 
-# share database with host and make it persistent
-VOLUME ["/var/lib/mysql"]
-
 # enable remote connections to mariadb from any IP
 RUN sed -i 's|skip-networking|#skip-networking|g' /etc/my.cnf.d/mariadb-server.cnf
 RUN sed -i 's|#bind-address=0.0.0.0|bind-address=0.0.0.0|g' /etc/my.cnf.d/mariadb-server.cnf
-
-# add scripts
-ADD --chown=mysql:mysql include/init.sql /init.sql
-ADD --chown=root:root include/start.sh /start.sh
 
 # hack to add mariadb as a service
 RUN rc-status; \
@@ -45,6 +38,13 @@ RUN rc-status; \
 
 # necessary for services to be started
 VOLUME ["/sys/fs/cgroup"]
+
+# share database with host and make it persistent
+VOLUME ["/var/lib/mysql"]
+
+# add scripts
+ADD --chown=mysql:mysql include/init.sql /init.sql
+ADD --chown=root:root include/start.sh /start.sh
 
 # set working dir
 WORKDIR /var/lib/mysql/
