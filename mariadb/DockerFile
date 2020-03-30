@@ -49,4 +49,4 @@ ADD --chown=root:root include/start.sh /start.sh
 # set working dir
 WORKDIR /var/lib/mysql/
 
-ENTRYPOINT /start.sh
+ENTRYPOINT ["/start.sh"]
