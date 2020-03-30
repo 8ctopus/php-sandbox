@@ -1,4 +1,4 @@
-## Project description
+## project description
 
 A super lightweight web development environment based on Docker (253Mb).
 
@@ -8,19 +8,26 @@ The setup consists of two images:
 
 Both images are based on Alpine linux.
 
-## Start development environment
+## start development environment
 
     git clone https://github.com/8ctopus/webdev.git
     cd webdev
     docker-compose up
 
-## Test development environment
+## test development environment
 
 Run the scripts in
 
     http://localhost:8000/
 
-## Get console to containers
+## connect to database
+
+    hostname: localhost
+    user: root
+    password: 123
+    port: 3306
+
+## get console to containers
 
 ### web container
     docker exec -it dev-web zsh
