@@ -20,6 +20,12 @@ else
     mysql < /init.sql
 
     echo "Install database - OK"
+    echo "-----------------------------------------------"
+    echo "Database info"
+    echo "host: localhost"
+    echo "port: 3306"
+    echo "user: root"
+    echo "password: 123"
 fi
 
 # wait forever
