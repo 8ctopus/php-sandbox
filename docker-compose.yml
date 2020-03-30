@@ -6,10 +6,6 @@ services:
     container_name: dev-db
     ports:
       - 3306:3306
-    entrypoint: >
-      sh -c "rc-service mariadb restart &&
-             mysql < /init.sql &&
-             tail -f /dev/null"
   web:
     image: 8ctopus/web:latest
     container_name: dev-web
