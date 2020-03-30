@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "..."
 echo "Start container database..."
 
