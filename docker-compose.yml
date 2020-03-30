@@ -13,7 +13,6 @@ services:
       - 8000:80
     links:
       - mariadb
-    restart: always
     volumes:
       # development directory
       - ./dev/:/var/www/site/
