@@ -39,7 +39,7 @@ RUN rc-status; \
 # necessary for services to be started
 VOLUME ["/sys/fs/cgroup"]
 
-# share database with host and make it persistent
+# make database persistent
 VOLUME ["/var/lib/mysql"]
 
 # add scripts
