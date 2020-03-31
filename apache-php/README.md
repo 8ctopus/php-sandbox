@@ -1,6 +1,6 @@
 ## start container
 
-    docker run -it -p 8000:80 8ctopus/web
+    docker run -it -p 8000:80 8ctopus/apache-php
 
 ## connect to web server
 
@@ -8,5 +8,5 @@
 
 ## build docker image
 
-    docker build -t 8ctopus/web:latest .
+    docker build -t 8ctopus/apache-php:latest .
 

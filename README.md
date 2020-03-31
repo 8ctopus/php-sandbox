@@ -12,7 +12,7 @@ Both images are based on Alpine linux.
 
     git clone https://github.com/8ctopus/webdev.git
     cd webdev
-    docker build -t 8ctopus/web:latest web
+    docker build -t 8ctopus/apache-php:latest apache-php
     docker build -t 8ctopus/mariadb:latest mariadb
     docker-compose up
 

@@ -7,7 +7,7 @@ services:
     ports:
       - 3306:3306
   web:
-    image: 8ctopus/web:latest
+    image: 8ctopus/apache-php:latest
     container_name: dev-web
     ports:
       - 8000:80
