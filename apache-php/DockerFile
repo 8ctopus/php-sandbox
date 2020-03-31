@@ -58,6 +58,10 @@ RUN sed -i 's|#ServerName www.example.com:80|ServerName localhost:80|g' /etc/apa
 # change website default dir
 RUN sed -i 's|/var/www/localhost/htdocs|/var/www/site/|g' /etc/apache2/httpd.conf
 
+# change log files location
+RUN sed -i 's| logs/error.log| /var/log/error.log|g' /etc/apache2/httpd.conf
+RUN sed -i 's| logs/access.log| /var/log/access.log|g' /etc/apache2/httpd.conf
+
 # add test page
 ADD --chown=root:root include/index.php /var/www/site/index.php
 
