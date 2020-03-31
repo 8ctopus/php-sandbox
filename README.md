@@ -7,9 +7,13 @@ The setup consists of two images:
     - apache2
     - php with xdebug
     - composer
-- database server: mariadb - 188Mb
+- database server: MariaDB - 188Mb
 
 Both images are based on Alpine linux.
+
+## cool feature
+
+Apache, php and MariaDB configuration files are all exposed on the host computer and all changes are immediately applied.
 
 ## start development environment
 
