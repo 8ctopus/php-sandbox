@@ -3,6 +3,26 @@
 echo "..."
 echo "Start container database..."
 
+# check if we should expose /etc/my.cnf.d/ to host
+if [ -d /docker/etc/ ];
+then
+    echo "Expose /etc/my.cnf.d/ to host..."
+    sleep 3
+
+    # check if directory empty
+    if [ -z "$(ls -A /docker/etc/my.cnf.d)" ];
+    then
+        echo "Expose /etc/my.cnf.d/ to host - copy files..."
+        cp -r /etc/my.cnf.d/ /docker/etc/
+        rm -rf /etc/my.cnf.d/
+        ln -s /docker/etc/my.cnf.d /etc/my.cnf.d
+    else
+        echo "Expose /etc/my.cnf.d/ to host - config exists on host"
+    fi
+
+    echo "Expose /etc/my.cnf.d/ to host - OK"
+fi
+
 # check if database exists
 if [ -e /var/lib/mysql/ib_logfile0 ]
 then
