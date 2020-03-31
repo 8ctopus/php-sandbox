@@ -52,6 +52,9 @@ RUN apk add \
 RUN apk add \
     apache2
 
+# change server name
+RUN sed -i 's|#ServerName www.example.com:80|ServerName localhost:80|g' /etc/apache2/httpd.conf
+
 # change website default dir
 RUN sed -i 's|/var/www/localhost/htdocs|/var/www/site/|g' /etc/apache2/httpd.conf
 
