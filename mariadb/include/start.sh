@@ -87,7 +87,27 @@ stop_container()
 # wait for termination signal
 trap stop_container SIGTERM
 
+restart_mariadb()
+{
+    sleep 0.5
+
+    # restart mariadb
+    echo "Restart mariadb..."
+    rc-service mariadb restart
+
+    # check if mariadb is running
+    if pgrep -x /usr/bin/mysqld > /dev/null
+    then
+        echo "Restart mariadb - OK"
+    else
+        echo "Restart mariadb - FAILED"
+    fi
+}
+
 while true; do
-    sleep 3
+    # restart mariadb if any file in /etc/my.cnf.d changes
+    inotifywait --quiet --event modify,create,delete --recursive /etc/my.cnf.d/ && restart_mariadb
+
+    sleep 2
     echo -n "."
 done
