@@ -6,10 +6,21 @@ echo "Start container web server..."
 # check if we should expose /etc/apache2/ to host
 if [ -d /docker/etc/apache2/ ];
 then
-    echo "Expose /etc/apache2/..."
-    cp -r /etc/apache2/ /docker/etc/
-    rm -rf /etc/apache2/
-    ln -s /docker/etc/apache2 /etc/apache2
+    echo "Expose /etc/apache2/ to host..."
+    sleep 3
+
+    # check if directory empty
+    if [ -z "$(ls -A /docker/etc/apache2)" ];
+    then
+        echo "Expose /etc/apache2/ to host - copy files..."
+        cp -r /etc/apache2/ /docker/etc/
+        rm -rf /etc/apache2/
+        ln -s /docker/etc/apache2 /etc/apache2
+    else
+        echo "Expose /etc/apache2/ to host - apache2 config exists on host"
+    fi
+
+    echo "Expose /etc/apache2/ to host - OK"
 fi
 
 echo "-----------------------------------------------"
@@ -63,7 +74,7 @@ restart_apache2()
             echo "Restart apache2 - FAILED"
         fi
     else
-        echo "Restart apache2 - FAILED - apache2 syntax error"
+        echo "Restart apache2 - FAILED - syntax error"
     fi
 }
 
