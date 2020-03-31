@@ -1,12 +1,21 @@
 #!/bin/sh
 
-# start apache2
 echo ""
 echo "Start container web server..."
-httpd -k start
 
 echo "-----------------------------------------------"
-echo "Start container web server - OK - ready for connections"
+
+# start apache2
+httpd -k start
+
+# check if apache2 is running
+if pgrep -x httpd > /dev/null
+then
+    echo "Start container web server - OK - ready for connections"
+else
+    echo "Start container web server - OK - FAILED"
+    exit
+fi
 
 stop_container()
 {
