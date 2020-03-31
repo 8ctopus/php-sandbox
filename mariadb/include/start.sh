@@ -20,20 +20,34 @@ else
     echo "Install database - start service mariadb..."
     rc-service mariadb start
 
-    # configure database
-    echo "Install database - configure users..."
-    mysql < /init.sql
+    # check if mariadb is running
+    if pgrep -x /usr/bin/mysqld > /dev/null
+    then
+        # configure database
+        echo "Install database - configure users..."
+        mysql < /init.sql
 
-    echo "Install database - OK"
+        echo "Install database - OK"
+    else
+        echo "Install database - FAILED"
+    fi
 fi
 
 echo "-----------------------------------------------"
-echo "host: localhost"
-echo "port: 3306"
-echo "user: root"
-echo "password: 123"
-echo "-----------------------------------------------"
-echo "Start container database - OK - ready for connections"
+
+# check if mariadb is running
+if pgrep -x /usr/bin/mysqld > /dev/null
+then
+    echo "host: localhost"
+    echo "port: 3306"
+    echo "user: root"
+    echo "password: 123"
+    echo "-----------------------------------------------"
+    echo "Start container database - OK - ready for connections"
+else
+    echo "Start container database - FAILED"
+    exit
+fi
 
 # https://www.ctl.io/developers/blog/post/gracefully-stopping-docker-containers/
 # https://stackoverflow.com/questions/59521712/catching-sigterm-from-alpine-image
