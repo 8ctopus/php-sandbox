@@ -43,8 +43,8 @@ VOLUME ["/sys/fs/cgroup"]
 VOLUME ["/var/lib/mysql"]
 
 # add scripts
-ADD --chown=mysql:mysql include/init.sql /init.sql
 ADD --chown=root:root include/start.sh /start.sh
+ADD --chown=mysql:mysql include/init.sql /init.sql
 
 # set working dir
 WORKDIR /var/lib/mysql/
