@@ -44,8 +44,34 @@ stop_container()
 # https://unix.stackexchange.com/questions/317492/list-of-kill-signals
 trap stop_container SIGTERM
 
+restart_apache2()
+{
+    sleep 0.5
+
+    # test apache2 config
+    if httpd -t
+    then
+        # restart apache2
+        echo "Restart apache2..."
+        httpd -k restart
+
+        # check if apache2 is running
+        if pgrep -x httpd > /dev/null
+        then
+            echo "Restart apache2 - OK"
+        else
+            echo "Restart apache2 - FAILED"
+        fi
+    else
+        echo "Restart apache2 - FAILED - apache2 syntax error"
+    fi
+}
+
 # infinite loop, will only stop on termination signal
 while true; do
-    sleep 3
+    # restart apache if any file in /etc/apache2 changes
+    inotifywait --quiet --event modify,create,delete --recursive /etc/apache2/ && restart_apache2
+
+    sleep 2
     echo -n "."
 done
