@@ -6,6 +6,9 @@ services:
     container_name: dev-db
     ports:
       - 3306:3306
+    volumes:
+      # expose mariadb config to host
+      - ./etc/:/docker/etc/
   web:
     image: 8ctopus/apache-php:latest
     container_name: dev-web
