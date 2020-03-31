@@ -91,16 +91,22 @@ restart_mariadb()
 {
     sleep 0.5
 
-    # restart mariadb
-    echo "Restart mariadb..."
-    rc-service mariadb restart
-
-    # check if mariadb is running
-    if pgrep -x /usr/bin/mysqld > /dev/null
+    # test mariadb config
+    if ! mysqld --help 2>&1 | grep -ci error
     then
-        echo "Restart mariadb - OK"
+        # restart mariadb
+        echo "Restart mariadb..."
+        rc-service mariadb restart
+
+        # check if mariadb is running
+        if pgrep -x /usr/bin/mysqld > /dev/null
+        then
+            echo "Restart mariadb - OK"
+        else
+            echo "Restart mariadb - FAILED"
+        fi
     else
-        echo "Restart mariadb - FAILED"
+        echo "Restart mariadb - FAILED - syntax error"
     fi
 }
 
