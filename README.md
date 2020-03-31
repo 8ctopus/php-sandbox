@@ -3,7 +3,10 @@
 A super lightweight php development environment based on Docker (253Mb).
 
 The setup consists of two images:
-- web server: apache2, php with xdebug - 65Mb
+- web server - 65Mb
+    - apache2
+    - php with xdebug
+    - composer
 - database server: mariadb - 188Mb
 
 Both images are based on Alpine linux.
