@@ -71,6 +71,6 @@ ADD --chown=root:root include/index.php /var/www/site/index.php
 ADD --chown=root:root include/start.sh /start.sh
 
 # set working dir
-WORKDIR /var/www/
+WORKDIR /var/www/site/
 
 ENTRYPOINT ["/start.sh"]
