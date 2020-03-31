@@ -50,3 +50,9 @@ Run the scripts in
 ## use composer
     docker exec -it dev-web zsh
     composer ...
+
+## install laravel framework
+    docker exec -it dev-web zsh
+    composer create-project --prefer-dist laravel/laravel blog
+    cd blog
+    php artisan key:generate
