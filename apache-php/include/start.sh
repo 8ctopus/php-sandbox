@@ -17,10 +17,29 @@ then
         rm -rf /etc/apache2/
         ln -s /docker/etc/apache2 /etc/apache2
     else
-        echo "Expose /etc/apache2/ to host - apache2 config exists on host"
+        echo "Expose /etc/apache2/ to host - config exists on host"
     fi
 
     echo "Expose /etc/apache2/ to host - OK"
+fi
+
+if [ -d /docker/etc/php7/ ];
+then
+    echo "Expose /etc/php7/ to host..."
+    sleep 3
+
+    # check if directory empty
+    if [ -z "$(ls -A /docker/etc/php7)" ];
+    then
+        echo "Expose /etc/php7/ to host - copy files..."
+        cp -r /etc/php7/ /docker/etc/
+        rm -rf /etc/php7/
+        ln -s /docker/etc/php7 /etc/php7
+    else
+        echo "Expose /etc/php7/ to host - config exists on host"
+    fi
+
+    echo "Expose /etc/php7/ to host - OK"
 fi
 
 echo "-----------------------------------------------"
