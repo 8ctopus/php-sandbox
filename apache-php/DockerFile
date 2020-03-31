@@ -59,6 +59,12 @@ RUN sed -i 's|#ServerName www.example.com:80|ServerName localhost:80|g' /etc/apa
 # change website default dir
 RUN sed -i 's|/var/www/localhost/htdocs|/var/www/site/|g' /etc/apache2/httpd.conf
 
+# enable mod rewrite
+RUN sed -i 's|#LoadModule rewrite_module modules/mod_rewrite.so|LoadModule rewrite_module modules/mod_rewrite.so|g' /etc/apache2/httpd.conf
+
+# authorize all directives in .htaccess
+RUN sed -i 's|    AllowOverride None|    AllowOverride All|g' /etc/apache2/httpd.conf
+
 # change log files location
 RUN mkdir -p /var/log/apache2
 RUN sed -i 's| logs/error.log| /var/log/apache2/error.log|g' /etc/apache2/httpd.conf
