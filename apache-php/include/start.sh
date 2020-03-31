@@ -49,7 +49,7 @@ if pgrep -x httpd > /dev/null
 then
     echo "Start container web server - OK - ready for connections"
 else
-    echo "Start container web server - OK - FAILED"
+    echo "Start container web server - FAILED"
     exit
 fi
 
