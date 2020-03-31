@@ -9,8 +9,8 @@ then
     echo "Expose /etc/my.cnf.d/ to host..."
     sleep 3
 
-    # check if directory empty
-    if [ -z "$(ls -A /docker/etc/my.cnf.d)" ];
+    # check if directory exists
+    if [ ! -d /docker/etc/my.cnf.d/ ];
     then
         echo "Expose /etc/my.cnf.d/ to host - copy files..."
         cp -r /etc/my.cnf.d/ /docker/etc/
@@ -18,6 +18,8 @@ then
         ln -s /docker/etc/my.cnf.d /etc/my.cnf.d
     else
         echo "Expose /etc/my.cnf.d/ to host - config exists on host"
+        rm -rf /etc/my.cnf.d/
+        ln -s /docker/etc/my.cnf.d /etc/my.cnf.d
     fi
 
     echo "Expose /etc/my.cnf.d/ to host - OK"
