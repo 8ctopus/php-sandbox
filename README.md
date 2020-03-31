@@ -1,6 +1,6 @@
 ## project description
 
-A super lightweight web development environment based on Docker (253Mb).
+A super lightweight php development environment based on Docker (253Mb).
 
 The setup consists of two images:
 - web server: apache2, php with xdebug - 65Mb
