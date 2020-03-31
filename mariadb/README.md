@@ -12,3 +12,7 @@
 ## build docker image
 
     docker build -t 8ctopus/mariadb:latest .
+
+## more info
+
+    https://wiki.alpinelinux.org/wiki/MariaDB
