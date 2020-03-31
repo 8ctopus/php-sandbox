@@ -3,6 +3,15 @@
 echo ""
 echo "Start container web server..."
 
+# check if we should expose /etc/apache2/ to host
+if [ -d /docker/etc/apache2/ ];
+then
+    echo "Expose /etc/apache2/..."
+    cp -r /etc/apache2/ /docker/etc/
+    rm -rf /etc/apache2/
+    ln -s /docker/etc/apache2 /etc/apache2
+fi
+
 echo "-----------------------------------------------"
 
 # start apache2
