@@ -18,5 +18,5 @@ services:
       - ./dev/:/var/www/site/
       # expose apache logs to host
       - ./log/:/var/log/apache2/
-      # expose apache2 config
-      - ./etc/apache2/:/docker/etc/apache2/
+      # expose apache2 and php config to host
+      - ./etc/:/docker/etc/

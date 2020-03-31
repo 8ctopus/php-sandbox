@@ -4,7 +4,7 @@ echo ""
 echo "Start container web server..."
 
 # check if we should expose /etc/apache2/ to host
-if [ -d /docker/etc/apache2/ ];
+if [ -d /docker/etc/ ];
 then
     echo "Expose /etc/apache2/ to host..."
     sleep 3
@@ -21,10 +21,7 @@ then
     fi
 
     echo "Expose /etc/apache2/ to host - OK"
-fi
 
-if [ -d /docker/etc/php7/ ];
-then
     echo "Expose /etc/php7/ to host..."
     sleep 3
 
