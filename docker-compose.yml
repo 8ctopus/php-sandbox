@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   mariadb:
-    image: 8ctopus/mariadb:latest
+    image: 8ct8pus/mariadb-alpine:latest
     container_name: dev-db
     ports:
       - 3306:3306
@@ -10,7 +10,7 @@ services:
       # expose mariadb config to host
       - ./etc/:/docker/etc/
   web:
-    image: 8ctopus/apache-php:latest
+    image: 8ct8pus/apache-php-alpine:latest
     container_name: dev-web
     ports:
       - 8000:80
