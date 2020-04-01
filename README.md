@@ -1,29 +1,29 @@
 ## project description
 
-A super lightweight php development environment based on Docker (253Mb).
+A super lightweight php development environment based on Docker (253 MB).
 
-The setup consists of two images:
-- web server 65Mb
+The setup consists of 2 Docker images:
+
+- web server 65 MB
     - apache 2.4.41
     - php 7.3.16 with xdebug
     - composer
     - zsh
-- database server 188Mb
+- database server 188 MB
     - MariaDB 10.4.12
     - zsh
 
-Both images are based on Alpine linux.
+Both images are based on Alpine Linux.
 
 ## cool feature
 
-Apache, php and MariaDB configuration files are all exposed on the host computer and all changes are immediately applied.
+- Apache, php and MariaDB configuration files are exposed on the host.
+- All changes to the config files are automatically applied (hot reload).
 
 ## start development environment
 
     git clone https://github.com/8ctopus/webdev.git
     cd webdev
-    docker build -t 8ctopus/apache-php:latest apache-php
-    docker build -t 8ctopus/mariadb:latest mariadb
     docker-compose up
 
 ## test development environment
