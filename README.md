@@ -22,8 +22,8 @@ Both images are based on Alpine Linux.
 
 ## start development environment
 
-    git clone https://github.com/8ctopus/webdev.git
-    cd webdev
+    git clone https://github.com/8ctopus/php-dev.git
+    cd php-dev
     docker-compose up
 
 ## test development environment
