@@ -26,9 +26,7 @@ Both images are based on Alpine Linux.
     cd php-dev
     docker-compose up
 
-## test development environment
-
-Run the scripts in
+## access website
 
     http://localhost:8000/
 
@@ -42,16 +40,32 @@ Run the scripts in
 ## get console to containers
 
 ### web container
+
     docker exec -it dev-web zsh
 
 ### database container
+
     docker exec -it dev-db zsh
 
+## Xdebug
+
+The development environment is fully configured to debug php code from the PC.
+In the Xdebug client on the computer set the variables as follows:
+
+    host: 127.0.0.1
+    port: 9000
+    path mapping: "/var/www/site/" : "$GIT_ROOT/dev/"
+
+For path mapping, $GIT_ROOT is the absolute path to where you cloned this
+repository in.
+
 ## use composer
+
     docker exec -it dev-web zsh
     composer ...
 
 ## install laravel framework
+
     docker exec -it dev-web zsh
     composer create-project --prefer-dist laravel/laravel blog
     cd blog
