@@ -4,9 +4,10 @@ A super lightweight php development environment based on Docker (253 MB).
 
 The setup consists of 2 Docker images:
 
-- web server 65 MB
-    - apache 2.4.41
-    - php 7.3.16 with xdebug
+- web server 66 MB
+    - Apache 2.4.41 with SSL
+    - php 7.3.16
+    - Xdebug debugging from host
     - composer
     - zsh
 - database server 188 MB
@@ -15,10 +16,12 @@ The setup consists of 2 Docker images:
 
 Both images are based on Alpine Linux.
 
-## cool feature
+## cool features
 
-- Apache, php and MariaDB configuration files are exposed on the host.
+- Apache and php configuration files are exposed on the host.
+- https is configured out of the box.
 - All changes to the config files are automatically applied (hot reload).
+- Xdebug is configured for remote debugging (no headaches).
 
 ## start development environment
 
@@ -29,6 +32,7 @@ Both images are based on Alpine Linux.
 ## access website
 
     http://localhost:8000/
+    https://localhost:8001/
 
 ## connect to database
 
