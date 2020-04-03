@@ -9,7 +9,7 @@ services:
     volumes:
       # expose mariadb config to host
       - ./etc/:/docker/etc/
-      # save mariadb databases to volume
+      # save mariadb databases to named volume
       - database:/var/lib/mysql/
   web:
     image: 8ct8pus/apache-php-alpine:latest
