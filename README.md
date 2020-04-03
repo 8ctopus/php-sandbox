@@ -19,6 +19,7 @@ Both images are based on Alpine Linux.
 ## cool features
 
 - Apache and php configuration files are exposed on the host.
+- Just works with any domain name.
 - https is configured out of the box.
 - All changes to the config files are automatically applied (hot reload).
 - Xdebug is configured for remote debugging (no headaches).
@@ -33,6 +34,23 @@ Both images are based on Alpine Linux.
 
     http://localhost:8000/
     https://localhost:8001/
+
+## set domain name
+
+To set the domain name to www.test.com, edit the environment variable in the docker-compose file
+
+    environment:
+      - DOMAIN=www.test.com
+
+Then edit the system host file (C:\Windows\System32\drivers\etc\hosts). Editing the file requires administrator privileges.
+
+    127.0.0.1 test.net
+    127.0.0.1 www.test.net
+
+To access the site
+
+    http://www.test.net:8000/
+    https://www.test.net:8001/
 
 ## connect to database
 
