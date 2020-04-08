@@ -1,5 +1,4 @@
 /etc/
 /log/
 
-/project.sublime-project
-/project.sublime-workspace
+/*.sublime-workspace

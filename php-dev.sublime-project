@@ -1,0 +1,33 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		},
+		{
+			"path": "mariadb-alpine"
+		},
+		{
+			"path": "apache-php-alpine"
+		}
+	],
+	"settings":
+	{
+		"debug.configurations":
+		[
+			{
+				"hostname": "127.0.0.1",
+				"log": true,
+				"name": "Listen for XDebug",
+				"pathMappings":
+				{
+					"/var/www/site/": "K:\\dev\\github\\php-dev\\dev\\"
+				},
+				"port": 9000,
+				"request": "launch",
+				"stopOnEntry": false,
+				"type": "php"
+			}
+		]
+	}
+}
