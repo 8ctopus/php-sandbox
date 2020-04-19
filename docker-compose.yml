@@ -12,11 +12,11 @@ services:
       # save mariadb databases to named volume
       - database:/var/lib/mysql/
   web:
-    image: 8ct8pus/apache-php-alpine:latest
+    image: 8ct8pus/apache-php-fpm-alpine:latest
     container_name: dev-web
     ports:
-      - 8000:80
-      - 8001:443
+      - 80:80
+      - 443:443
     environment:
       - DOMAIN=localhost
       - DOCUMENT_ROOT=/public
