@@ -5,7 +5,7 @@ A super lightweight LAMP php development environment based on Docker (219 MB).
 The setup consists of 2 Docker images:
 
 - web server 40 MB
-    - Apache 2.4.41 with SSL
+    - Apache 2.4.43 with SSL
     - php-fpm 7.3.17
     - Xdebug debugging from host
     - composer
