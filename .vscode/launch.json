@@ -8,7 +8,7 @@
             "name": "Listen for XDebug",
             "type": "php",
             "request": "launch",
-            "port": 9000,
+            "port": 9001,
             "stopOnEntry": true,
             "pathMappings": {
                 "/var/www/site/public/": "${workspaceRoot}/dev/public/",
@@ -20,7 +20,7 @@
             "request": "launch",
             "program": "${file}",
             "cwd": "${fileDirname}",
-            "port": 9000
+            "port": 9001
         }
     ]
 }

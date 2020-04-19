@@ -23,7 +23,7 @@
 				{
 					"/var/www/site/": "K:\\dev\\github\\php-dev\\dev\\"
 				},
-				"port": 9000,
+				"port": 9001,
 				"request": "launch",
 				"stopOnEntry": false,
 				"type": "php"
