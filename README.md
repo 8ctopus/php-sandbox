@@ -1,16 +1,16 @@
 ## project description
 
-A super lightweight php development environment based on Docker (252 MB).
+A super lightweight LAMP php development environment based on Docker (219 MB).
 
 The setup consists of 2 Docker images:
 
-- web server 64 MB
+- web server 40 MB
     - Apache 2.4.41 with SSL
-    - php 7.3.16
+    - php-fpm 7.3.17
     - Xdebug debugging from host
     - composer
     - zsh
-- database server 188 MB
+- database server 179 MB
     - MariaDB 10.4.12
     - zsh
 
@@ -32,8 +32,8 @@ Both images are based on Alpine Linux.
 
 ## access website
 
-    http://localhost:8000/
-    https://localhost:8001/
+    http://localhost/
+    https://localhost/
 
 ## set domain name
 
@@ -49,8 +49,8 @@ Then edit the system host file (C:\Windows\System32\drivers\etc\hosts). Editing 
 
 To access the site
 
-    http://www.test.net:8000/
-    https://www.test.net:8001/
+    http://www.test.net/
+    https://www.test.net/
 
 ## connect to database
 
@@ -75,7 +75,7 @@ The development environment is fully configured to debug php code from the PC.
 In the Xdebug client on the computer set the variables as follows:
 
     host: 127.0.0.1
-    port: 9000
+    port: 9001
     path mapping: "/var/www/site/" : "$GIT_ROOT/dev/"
 
 For path mapping, $GIT_ROOT is the absolute path to where you cloned this
