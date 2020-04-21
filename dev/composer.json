@@ -1,0 +1,10 @@
+{
+    "name": "8ctopus/php-dev",
+    "authors": [
+        {
+            "name": "8ctopus",
+            "email": "hello@octopuslabs.io"
+        }
+    ],
+    "require": {}
+}
