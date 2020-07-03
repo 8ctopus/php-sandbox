@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Listen for XDebug",
+            "name": "listen xdebug 9001",
             "type": "php",
             "request": "launch",
             "port": 9001,
@@ -13,6 +13,12 @@
             "pathMappings": {
                 "/var/www/site/": "${workspaceRoot}/dev/",
             }
+        },
+        {
+          "name": "listen CLI",
+          "type": "php",
+          "request": "launch",
+          "port": 9000
         },
         {
             "name": "Launch currently open script",
