@@ -1,6 +1,6 @@
 ## project description
 
-A super lightweight LAMP php development environment based on Docker (219 MB).
+A super lightweight LAMP development environment based on Docker (219 MB).
 
 The setup consists of 2 Docker images:
 
@@ -21,13 +21,11 @@ Both images are based on Alpine Linux.
 - Apache and php configuration files are exposed on the host.
 - Just works with any domain name.
 - https is configured out of the box.
-- All changes to the config files are automatically applied (hot reload).
+- All changes to config files are automatically applied (hot reload).
 - Xdebug is configured for remote debugging (no headaches).
 
 ## start development environment
 
-    git clone https://github.com/8ctopus/php-dev.git
-    cd php-dev
     docker-compose up
 
 ## access website
@@ -42,37 +40,19 @@ To set the domain name to www.test.com, edit the environment variable in the doc
     environment:
       - DOMAIN=www.test.com
 
-Then edit the system host file (C:\Windows\System32\drivers\etc\hosts). Editing the file requires administrator privileges.
+Add this line to the system host file. Editing the file requires administrator privileges.
 
-    127.0.0.1 test.net
-    127.0.0.1 www.test.net
+    C:\Windows\System32\drivers\etc\hosts
 
-To access the site
+    127.0.0.1 test.net www.test.net
 
-    http://www.test.net/
-    https://www.test.net/
+## https
 
-## connect to database
-
-    hostname: localhost
-    user: root
-    password: 123
-    port: 3306
-
-## get console to containers
-
-### web container
-
-    docker exec -it dev-web zsh
-
-### database container
-
-    docker exec -it dev-db zsh
+To remove "Your connection is not private" nag screens, import the certificate authority file under ssl/certificate_authority.pem in your browser's certificates under Trusted Root Certification Authorities. (https://support.globalsign.com/digital-certificates/digital-certificate-installation/install-client-digital-certificate-windows-using-chrome)
 
 ## Xdebug
 
-The development environment is fully configured to debug php code from the PC.
-In the Xdebug client on the computer set the variables as follows:
+The docker image is fully configured to debug php code from the computer. The necessary configuration for Visual Studio Code is already installed. For other IDEs, configure the Xdebug client as follows:
 
     host: 127.0.0.1
     port: 9001
@@ -81,14 +61,43 @@ In the Xdebug client on the computer set the variables as follows:
 For path mapping, $GIT_ROOT is the absolute path to where you cloned this
 repository in.
 
+## get console to containers
+
+### web container
+
+    docker exec -it sandbox zsh
+
+### database container
+
+    docker exec -it sandbox-db zsh
+
 ## use composer
 
-    docker exec -it dev-web zsh
-    composer ...
+    docker exec -it sandbox zsh
+    composer install
+
+## connect to database
+
+    hostname: localhost
+    user: root
+    password: 123
+    port: 3306
+
+## extend the docker images
+
+As an example, let's add the php-curl extension.
+
+    docker exec -it sandbox zsh
+    apk add php-curl
+    exit
+    docker-compose stop
+    docker commit sandbox:dev
+
+To use the new image, update the image link in the docker-compose file.
 
 ## install laravel framework
 
-    docker exec -it dev-web zsh
+    docker exec -it sandbox zsh
     composer create-project --prefer-dist laravel/laravel blog
     cd blog
     php artisan key:generate
