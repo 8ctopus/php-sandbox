@@ -7,7 +7,7 @@
 
 echo("<pre>");
 
-$mysqli = new mysqli("dev-db", "root", "123", "test");
+$mysqli = new mysqli("sandbox-db", "root", "123", "test");
 
 if ($mysqli->connect_errno)
 {
