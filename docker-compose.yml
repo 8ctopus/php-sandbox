@@ -3,7 +3,7 @@ version: '3.7'
 services:
   mariadb:
     image: 8ct8pus/mariadb-alpine:latest
-    container_name: dev-db
+    container_name: sandbox-db
     ports:
       - 3306:3306
     volumes:
@@ -13,7 +13,7 @@ services:
       - database:/var/lib/mysql/
   web:
     image: 8ct8pus/apache-php-fpm-alpine:latest
-    container_name: dev-web
+    container_name: sandbox
     ports:
       - 80:80
       - 443:443
@@ -29,5 +29,7 @@ services:
       - ./log/:/var/log/apache2/
       # expose apache2 and php config to host
       - ./etc/:/docker/etc/
+      # expose ssl certificates to host
+      - ./ssl/:/etc/ssl/apache2/
 volumes:
   database:
