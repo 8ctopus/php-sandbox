@@ -28,18 +28,20 @@ Both images are based on Alpine Linux.
 ## start development environment
 
 ```bash
+# start containers
 docker-compose up
 CTRL-Z to detach
 
+# stop containers
 docker-compose stop
 ```
 
-## access website
+## access development website
 
     http://localhost/
     https://localhost/
 
-## set domain name
+## set website domain name
 
 To set the domain name to www.test.com, edit the environment variable in the docker-compose file
 
@@ -52,13 +54,13 @@ Add this line to the system host file. Editing the file requires administrator p
 
     127.0.0.1 test.net www.test.net
 
-## https
+## add https
 
 To remove "Your connection is not private" nag screens, import the certificate authority file under ssl/certificate_authority.pem in the browser's certificates under Trusted Root Certification Authorities.
 
 guide: https://support.globalsign.com/digital-certificates/digital-certificate-installation/install-client-digital-certificate-windows-using-chrome
 
-## Xdebug debugging
+## Xdebug debugger
 
 This repository is configured to debug php code in Visual Studio Code.
 To start debugging, open the VSCode workspace then select `Run > Start debugging` then open the site in the browser.
@@ -67,7 +69,7 @@ For other IDEs, set the Xdebug debugging port to 9001.
 
 To troubleshoot debugger issues, check the `log\xdebug.log` file.
 
-## Xdebug profiling
+## Xdebug profiler
 
 To start profiling, add the `XDEBUG_PROFILE` variable to the request as a GET, POST or COOKIE.
 
@@ -75,7 +77,7 @@ To start profiling, add the `XDEBUG_PROFILE` variable to the request as a GET, P
 
 Profiles are stored in the `log` directory and can be analyzed with tools such as [webgrind](https://github.com/jokkedk/webgrind).
 
-## SPX profiling
+## SPX profiler
 
 To start profiling with SPX:
 
@@ -83,6 +85,8 @@ To start profiling with SPX:
 - Check checkbox `Whether to enable SPX profiler for your current browser session. No performance impact for other clients.`
 - Run script to profile
 - Refresh the SPX control panel tab and the report will be available at the bottom of the screen. Click it to show the report in a new tab.
+
+_Note_ Disable Xdebug debugger `xdebug.remote_enable` for accurate measurements.
 
 ## connect to database
 
@@ -108,7 +112,7 @@ docker exec -it sandbox zsh
 composer install
 ```
 
-## extend docker images
+## extend docker image
 
 In this example, we add the php-curl extension.
 
@@ -121,11 +125,4 @@ docker-compose stop
 docker commit sandbox sandbox-curl:dev
 ```
 
-To use the new image, update the image link in the docker-compose file.
-
-## install laravel framework
-
-    docker exec -it sandbox zsh
-    composer create-project --prefer-dist laravel/laravel blog
-    cd blog
-    php artisan key:generate
+To use this image, update the reference in the docker-compose file.
