@@ -65,7 +65,7 @@ To start debugging, open the VSCode workspace then select `Run > Start debugging
 
 For other IDEs, set the Xdebug debugging port to 9001.
 
-To troubleshoot debugger issues, check the `xdebug.log` file.
+To troubleshoot debugger issues, check the `log\xdebug.log` file.
 
 ## Xdebug profiling
 
@@ -73,7 +73,7 @@ To start profiling, add the `XDEBUG_PROFILE` variable to the request as a GET, P
 
     http://localhost/?XDEBUG_PROFILE
 
-Profiles are stored in the log directory and can be analyzed with tools such as [webgrind](https://github.com/jokkedk/webgrind).
+Profiles are stored in the `log` directory and can be analyzed with tools such as [webgrind](https://github.com/jokkedk/webgrind).
 
 ## SPX profiling
 
@@ -90,7 +90,6 @@ To start profiling with SPX:
     user: root
     password: 123
     port: 3306
-
 
 ## access containers through command line
 
