@@ -2,6 +2,6 @@
 /log/
 /ssl/
 
-/src/vendor/
+/html/vendor/
 
 /*.sublime-workspace
