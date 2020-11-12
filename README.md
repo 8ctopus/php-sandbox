@@ -41,6 +41,8 @@ docker-compose stop
     http://localhost/
     https://localhost/
 
+The source code is located inside the `html` directory.
+
 ## set website domain name
 
 To set the domain name to www.test.com, edit the environment variable in the docker-compose file
@@ -90,7 +92,7 @@ _Note_ Disable Xdebug debugger `xdebug.remote_enable` for accurate measurements.
 
 ## connect to database
 
-    hostname: localhost
+    hostname: localhost / sandbox-db
     user: root
     password: 123
     port: 3306
@@ -125,4 +127,8 @@ docker-compose stop
 docker commit sandbox sandbox-curl:dev
 ```
 
-To use this image, update the reference in the docker-compose file.
+To use this image, update the reference in `docker-compose.yml`.
+
+## notes
+
+In Windows hot reload doesn't work with WSL 2, you need to use the legacy Hyper-V.
