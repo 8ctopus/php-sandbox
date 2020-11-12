@@ -24,7 +24,7 @@ services:
       - mariadb
     volumes:
       # development directory
-      - ./src/:/var/www/html/
+      - ./html/:/var/www/html/
       # expose apache logs to host
       - ./log/:/var/log/apache2/
       # expose apache2 and php config to host
