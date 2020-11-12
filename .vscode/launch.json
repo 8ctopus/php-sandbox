@@ -11,7 +11,7 @@
         "stopOnEntry": true,
         "pathMappings":
         {
-          "/var/www/site/": "${workspaceRoot}"
+          "/var/www/html/": "${workspaceRoot}"
         },
       },
       {
