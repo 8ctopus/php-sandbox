@@ -1,14 +1,15 @@
 ## project description
 
-A super lightweight LAMP development environment based on Docker (219 MB).
+A super lightweight LAMP development environment based on Docker (233 MB).
 
 The setup consists of 2 Docker images:
 
-- web server 40 MB
-    - Apache 2.4.43 with SSL
-    - php-fpm 7.3.17
-    - Xdebug debugging from host
-    - composer
+- web server 54 MB
+    - Apache 2.4.46 with SSL
+    - php-fpm 7.4.12
+    - Xdebug 2.9.8 - debugger and profiler
+    - [SPX prolifer 0.4.10](https://github.com/NoiseByNorthwest/php-spx)
+    - composer 2.0.6
     - zsh
 - database server 179 MB
     - MariaDB 10.4.12
@@ -26,7 +27,12 @@ Both images are based on Alpine Linux.
 
 ## start development environment
 
-    docker-compose up
+```bash
+docker-compose up
+CTRL-Z to detach
+
+docker-compose stop
+```
 
 ## access website
 
@@ -48,33 +54,35 @@ Add this line to the system host file. Editing the file requires administrator p
 
 ## https
 
-To remove "Your connection is not private" nag screens, import the certificate authority file under ssl/certificate_authority.pem in your browser's certificates under Trusted Root Certification Authorities. (https://support.globalsign.com/digital-certificates/digital-certificate-installation/install-client-digital-certificate-windows-using-chrome)
+To remove "Your connection is not private" nag screens, import the certificate authority file under ssl/certificate_authority.pem in the browser's certificates under Trusted Root Certification Authorities.
 
-## Xdebug
+guide: https://support.globalsign.com/digital-certificates/digital-certificate-installation/install-client-digital-certificate-windows-using-chrome
 
-The docker image is fully configured to debug php code from the computer. The necessary configuration for Visual Studio Code is already installed. For other IDEs, configure the Xdebug client as follows:
+## Xdebug debugging
 
-    host: 127.0.0.1
-    port: 9001
-    path mapping: "/var/www/site/" : "$GIT_ROOT/dev/"
+This repository is configured to debug php code in Visual Studio Code.
+To start debugging, open the VSCode workspace then select `Run > Start debugging` then open the site in the browser.
 
-For path mapping, $GIT_ROOT is the absolute path to where you cloned this
-repository in.
+For other IDEs, set the Xdebug debugging port to 9001.
 
-## get console to containers
+To troubleshoot debugger issues, check the `xdebug.log` file.
 
-### web container
+## Xdebug profiling
 
-    docker exec -it sandbox zsh
+To start profiling, add the `XDEBUG_PROFILE` variable to the request as a GET, POST or COOKIE.
 
-### database container
+    http://localhost/?XDEBUG_PROFILE
 
-    docker exec -it sandbox-db zsh
+Profiles are stored in the log directory and can be analyzed with tools such as [webgrind](https://github.com/jokkedk/webgrind).
 
-## use composer
+## SPX profiling
 
-    docker exec -it sandbox zsh
-    composer install
+To start profiling with SPX:
+
+- Access the [SPX control panel](http://localhost/?SPX_KEY=dev&SPX_UI_URI=/)
+- Check checkbox `Whether to enable SPX profiler for your current browser session. No performance impact for other clients.`
+- Run script to profile
+- Refresh the SPX control panel tab and the report will be available at the bottom of the screen. Click it to show the report in a new tab.
 
 ## connect to database
 
@@ -83,15 +91,36 @@ repository in.
     password: 123
     port: 3306
 
-## extend the docker images
 
-As an example, let's add the php-curl extension.
+## access containers through command line
 
-    docker exec -it sandbox zsh
-    apk add php-curl
-    exit
-    docker-compose stop
-    docker commit sandbox:dev
+```bash
+# web container
+docker exec -it sandbox zsh
+
+# database container
+docker exec -it sandbox-db zsh
+```
+
+## use composer
+
+```bash
+docker exec -it sandbox zsh
+composer install
+```
+
+## extend docker images
+
+In this example, we add the php-curl extension.
+
+```bash
+docker-compose up --detach
+docker exec -it sandbox zsh
+apk add php-curl
+exit
+docker-compose stop
+docker commit sandbox sandbox-curl:dev
+```
 
 To use the new image, update the image link in the docker-compose file.
 
