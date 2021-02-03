@@ -6,10 +6,10 @@ The setup consists of 2 Docker images:
 
 - web server 54 MB
     - Apache 2.4.46 with SSL
-    - php-fpm 7.4.12
-    - Xdebug 2.9.8 - debugger and profiler
+    - php-fpm 7.4.14
+    - Xdebug 3.0.2 - debugger and profiler
     - [SPX prolifer 0.4.10](https://github.com/NoiseByNorthwest/php-spx)
-    - composer 2.0.6
+    - composer 2.0.8
     - zsh
 - database server 179 MB
     - MariaDB 10.4.12
@@ -34,6 +34,9 @@ CTRL-Z to detach
 
 # stop containers
 docker-compose stop
+
+# delete containers
+docker-compose down
 ```
 
 ## access development website
@@ -70,6 +73,12 @@ To start debugging, open the VSCode workspace then select `Run > Start debugging
 For other IDEs, set the Xdebug debugging port to 9001.
 
 To troubleshoot debugger issues, check the `log\xdebug.log` file.
+
+If `host.docker.internal` does not resolve within the container, update the xdebug client host within `etc\php\conf.d\xdebug.ini` to the docker host ip address.
+
+```
+xdebug.client_host          = 192.168.65.2
+```
 
 ## Xdebug profiler
 

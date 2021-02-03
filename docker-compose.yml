@@ -12,7 +12,7 @@ services:
       # save mariadb databases to named volume
       - database:/var/lib/mysql/
   web:
-    image: 8ct8pus/apache-php-fpm-alpine:1.0.9
+    image: 8ct8pus/apache-php-fpm-alpine:1.1.1
     container_name: sandbox
     ports:
       - 80:80
