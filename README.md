@@ -6,14 +6,14 @@ The setup consists of 2 Docker images:
 
 - web server 54 MB
     - Apache 2.4.46 with SSL
-    - php-fpm 7.4.14
+    - php-fpm 7.4.15
     - Xdebug 3.0.2 - debugger and profiler
     - [SPX prolifer 0.4.10](https://github.com/NoiseByNorthwest/php-spx)
-    - composer 2.0.8
-    - zsh
+    - composer 2.0.9
+    - zsh 5.8
 - database server 179 MB
-    - MariaDB 10.4.12
-    - zsh
+    - MariaDB 10.5.8
+    - zsh 5.8
 
 Both images are based on Alpine Linux.
 
@@ -37,9 +37,12 @@ docker-compose stop
 
 # delete containers
 docker-compose down
+
+# delete containers and data (mariadb database)
+docker-compose down -v
 ```
 
-## access development website
+## access website
 
     http://localhost/
     https://localhost/
