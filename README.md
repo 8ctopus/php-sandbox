@@ -4,15 +4,15 @@ A super lightweight LAMP development environment based on Docker (233 MB).
 
 The setup consists of 2 Docker images:
 
-- web server 54 MB
-    - Apache 2.4.46 with SSL
-    - php-fpm 7.4.15
-    - Xdebug 3.0.2 - debugger and profiler
+- web server 58 MB
+    - Apache 2.4.48 with SSL
+    - php-fpm 8.0.8 or 7.4.21
+    - Xdebug 3.0.4 - debugger and profiler
     - [SPX prolifer 0.4.10](https://github.com/NoiseByNorthwest/php-spx)
-    - composer 2.0.9
+    - composer 2.1.3
     - zsh 5.8
 - database server 179 MB
-    - MariaDB 10.5.8
+    - MariaDB 10.5.11
     - zsh 5.8
 
 Both images are based on Alpine Linux.
@@ -28,7 +28,7 @@ Both images are based on Alpine Linux.
 ## start development environment
 
 ```bash
-# start containers
+# start containers (php 8 by default, edit docker-compose.yml to use php 7.4)
 docker-compose up
 CTRL-Z to detach
 
