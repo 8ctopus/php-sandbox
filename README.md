@@ -1,4 +1,4 @@
-## project description
+## php sandbox
 
 A super lightweight LAMP development environment based on Docker (233 MB).
 
@@ -11,6 +11,7 @@ The setup consists of 2 Docker images:
     - [SPX prolifer 0.4.10](https://github.com/NoiseByNorthwest/php-spx)
     - composer 2.1.3
     - zsh 5.8
+
 - database server 179 MB
     - MariaDB 10.5.11
     - zsh 5.8
@@ -27,7 +28,7 @@ Both images are based on Alpine Linux.
 
 ## start development environment
 
-```bash
+```sh
 # start containers (php 8 by default, edit docker-compose.yml to use php 7.4)
 docker-compose up
 CTRL-Z to detach
@@ -79,8 +80,8 @@ To troubleshoot debugger issues, check the `log\xdebug.log` file.
 
 If `host.docker.internal` does not resolve within the container, update the xdebug client host within `etc\php\conf.d\xdebug.ini` to the docker host ip address.
 
-```
-xdebug.client_host          = 192.168.65.2
+```ini
+xdebug.client_host = 192.168.65.2
 ```
 
 ## Xdebug profiler
@@ -104,14 +105,16 @@ _Note_ Disable Xdebug debugger `xdebug.remote_enable` for accurate measurements.
 
 ## connect to database
 
-    hostname: localhost / sandbox-db
-    user: root
-    password: 123
-    port: 3306
+```
+hostname: localhost / sandbox-db
+user: root
+password: 123
+port: 3306
+```
 
 ## access containers through command line
 
-```bash
+```sh
 # web container
 docker exec -it sandbox zsh
 
@@ -121,7 +124,7 @@ docker exec -it sandbox-db zsh
 
 ## use composer
 
-```bash
+```sh
 docker exec -it sandbox zsh
 composer install
 ```
@@ -130,7 +133,7 @@ composer install
 
 In this example, we add the php-curl extension.
 
-```bash
+```sh
 docker-compose up --detach
 docker exec -it sandbox zsh
 apk add php-curl
