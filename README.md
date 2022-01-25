@@ -1,37 +1,42 @@
-## php sandbox
+# php sandbox
 
-A super lightweight LAMP development environment based on Docker (233 MB).
+A super lightweight LAMP development environment based on Docker (approx 250 MB).
 
 The setup consists of 2 Docker images:
 
-- web server 58 MB
-    - Apache 2.4.48 with SSL
-    - php-fpm 8.0.8 or 7.4.21
-    - Xdebug 3.0.4 - debugger and profiler
+- web server 61 MB
+    - Apache 2.4.52 with SSL
+    - php-fpm 8.0.14 or 7.4.21
+    - Xdebug 3.1.2 - debugger and profiler
     - [SPX prolifer 0.4.10](https://github.com/NoiseByNorthwest/php-spx)
-    - composer 2.1.3
+    - composer 2.1.12
     - zsh 5.8
+    - Alpine 3.15.0
 
-- database server 179 MB
-    - MariaDB 10.5.11
+- database server 195 MB
+    - MariaDB 10.6.4
     - zsh 5.8
-
-Both images are based on Alpine Linux.
+    - Alpine 3.15.0
 
 ## cool features
 
+- php 8 or 7
 - Apache and php configuration files are exposed on the host.
 - Just works with any domain name.
 - https is configured out of the box.
 - All changes to config files are automatically applied (hot reload).
 - Xdebug is configured for remote debugging (no headaches).
 
+_Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/microsoft/WSL/issues/4739), you need to use the legacy Hyper-V.
+
 ## start development environment
 
 ```sh
-# start containers (php 8 by default, edit docker-compose.yml to use php 7.4)
-docker-compose up
-CTRL-Z to detach
+# start containers on linux and mac in shell (php 8 by default, edit docker-compose.yml to use php 7.4)
+docker-compose up &
+
+# start container on Windows in cmd
+start /B docker-compose up
 
 # stop containers
 docker-compose stop
@@ -39,7 +44,7 @@ docker-compose stop
 # delete containers
 docker-compose down
 
-# delete containers and data (mariadb database)
+# delete containers and volume (deletes database)
 docker-compose down -v
 ```
 
@@ -101,7 +106,7 @@ To start profiling with SPX:
 - Run script to profile
 - Refresh the SPX control panel tab and the report will be available at the bottom of the screen. Click it to show the report in a new tab.
 
-_Note_ Disable Xdebug debugger `xdebug.remote_enable` for accurate measurements.
+_Note_: Disable Xdebug debugger `xdebug.remote_enable` for accurate measurements.
 
 ## connect to database
 
@@ -138,12 +143,9 @@ docker-compose up --detach
 docker exec -it sandbox zsh
 apk add php-curl
 exit
+
 docker-compose stop
 docker commit sandbox sandbox-curl:dev
 ```
 
 To use this image, update the reference in `docker-compose.yml`.
-
-## notes
-
-In Windows hot reload doesn't work with WSL 2, you need to use the legacy Hyper-V.
