@@ -8,7 +8,7 @@ The setup consists of 2 Docker images:
     - Apache 2.4.52 with SSL
     - php-fpm 8.0.14 or 7.4.21
     - Xdebug 3.1.2 - debugger and profiler
-    - [SPX prolifer 0.4.10](https://github.com/NoiseByNorthwest/php-spx)
+    - [SPX prolifer 0.4.11](https://github.com/NoiseByNorthwest/php-spx)
     - composer 2.1.12
     - zsh 5.8
     - Alpine 3.15.0
@@ -32,11 +32,14 @@ _Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/micro
 ## start development environment
 
 ```sh
-# start containers on linux and mac in shell (php 8 by default, edit docker-compose.yml to use php 7.4)
+# start containers in detached mode on linux and mac in shell (php 8 by default, edit docker-compose.yml to use php 7.4)
 docker-compose up &
 
-# start container on Windows in cmd
+# start containers in detached mode on Windows in cmd
 start /B docker-compose up
+
+# view logs
+docker-compose logs -f
 
 # stop containers
 docker-compose stop
@@ -76,14 +79,14 @@ guide: https://support.globalsign.com/digital-certificates/digital-certificate-i
 
 ## Xdebug debugger
 
-This repository is configured to debug php code in Visual Studio Code.
-To start debugging, open the VSCode workspace then select `Run > Start debugging` then open the site in the browser.
+This repository is configured to debug php code in Visual Studio Code. To start debugging, open the VSCode workspace then select `Run > Start debugging` then open the site in the browser.
+The default config is to stop on entry which stops at the first line in the file. To only stop on breakpoints, set `stopOnEntry` to `false` in `.vscode/launch.json`.
 
-For other IDEs, set the Xdebug debugging port to 9001.
+For other IDEs, set the Xdebug debugging port to `9001`.
 
-To troubleshoot debugger issues, check the `log\xdebug.log` file.
+To troubleshoot debugger issues, check the `docker/log/xdebug.log` file.
 
-If `host.docker.internal` does not resolve within the container, update the xdebug client host within `etc\php\conf.d\xdebug.ini` to the docker host ip address.
+If `host.docker.internal` does not resolve within the container, update the xdebug client host within `docker/etc/php/conf.d/xdebug.ini` to the docker host ip address.
 
 ```ini
 xdebug.client_host = 192.168.65.2
