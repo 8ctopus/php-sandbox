@@ -8,19 +8,12 @@
         "port": 9001,
         "log": false,
         "stopOnEntry": true,
-        "pathMappings":
-        {
-          "/var/www/html/": "${workspaceRoot}/html/"
-        },
+            "pathMappings": {
+                "/var/www/html/": "${workspaceRoot}/html/",
+            }
       },
       {
-        "name": "listen CLI",
-        "type": "php",
-        "request": "launch",
-        "port": 9000
-      },
-      {
-        "name": "run CLI",
+        "name": "Launch currently open script",
         "type": "php",
         "request": "launch",
         "program": "${file}",
