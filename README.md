@@ -64,6 +64,10 @@ docker-compose down
 
 # delete containers and volume (deletes database)
 docker-compose down -v
+
+## get shell access to container
+docker exec -it sandbox zsh
+docker exec -it sandbox-db zsh
 ```
 
 ## website domain name
