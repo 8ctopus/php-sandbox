@@ -1,6 +1,6 @@
 # php sandbox
 
-A super lightweight LAMP development environment based on Docker (approx 250 MB).
+A super lightweight LAMP (Linux Apache MySQL PHP) development environment based on Docker (approx 250 MB).
 
 The setup consists of 2 Docker images:
 
@@ -31,7 +31,7 @@ _Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/micro
 
 ## download php sandbox
 
-You can either download the latest version from the `tags` within `Releases` section in the right sidebar or `git clone` the repository.
+You can either download the latest version from the `tags` within the `Releases` section in the right sidebar or `git clone` the repository.
 
 ```sh
 git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
@@ -39,18 +39,18 @@ git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
 
 ## start developing
 
+Start docker desktop then:
+
 ```sh
 cd php-sandbox
 
-# start docker desktop
-
 # edit `docker-compose.yml` to use php 7.4, no changes required for php 8.0.
-
-# start containers in detached mode on linux and mac in shell
-docker-compose up &
 
 # start containers in detached mode on Windows in cmd
 start /B docker-compose up
+
+# start containers in detached mode on linux and mac in shell
+docker-compose up &
 
 # open browser
 http://localhost/
