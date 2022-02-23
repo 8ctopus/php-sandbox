@@ -21,23 +21,38 @@ The setup consists of 2 Docker images:
 ## cool features
 
 - php 8 or 7
-- Apache and php configuration files are exposed on the host.
-- Just works with any domain name.
-- https is configured out of the box.
+- Just works with any domain name and https is configured out of the box.
 - All changes to config files are automatically applied (hot reload).
-- Xdebug is configured for remote debugging (no headaches).
+- Xdebug is configured for remote debugging in VSCode.
+- Profile your code with SPX
 
 _Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/microsoft/WSL/issues/4739), you need to use the legacy Hyper-V.
 
-## start development environment
+## start developing
 
 ```sh
+git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
+cd php-sandbox
+
 # start containers in detached mode on linux and mac in shell (php 8 by default, edit docker-compose.yml to use php 7.4)
 docker-compose up &
 
 # start containers in detached mode on Windows in cmd
 start /B docker-compose up
+```
 
+## access website
+
+    http://localhost/
+    https://localhost/
+
+## source code
+
+The source code is located inside the `html` directory.
+
+## more docker commands
+
+```sh
 # view logs
 docker-compose logs -f
 
@@ -50,13 +65,6 @@ docker-compose down
 # delete containers and volume (deletes database)
 docker-compose down -v
 ```
-
-## access website
-
-    http://localhost/
-    https://localhost/
-
-The source code is located inside the `html` directory.
 
 ## set website domain name
 
@@ -71,7 +79,7 @@ Add this line to the system host file. Editing the file requires administrator p
 
     127.0.0.1 test.net www.test.net
 
-## add https
+## https
 
 To remove "Your connection is not private" nag screens, import the certificate authority file under ssl/certificate_authority.pem in the browser's certificates under Trusted Root Certification Authorities.
 
@@ -79,8 +87,7 @@ guide: https://support.globalsign.com/digital-certificates/digital-certificate-i
 
 ## Xdebug debugger
 
-This repository is configured to debug php code in Visual Studio Code. To start debugging, open the VSCode workspace then select `Run > Start debugging` then open the site in the browser.
-The default config is to stop on entry which stops at the first line in the file. To only stop on breakpoints, set `stopOnEntry` to `false` in `.vscode/launch.json`.
+This repository is configured to debug php code in Visual Studio Code. To start debugging, open the VSCode workspace then select `Run > Start debugging` then open the site in the browser. The default config is to stop on entry which stops at the first line in the file. To only stop on breakpoints, set `stopOnEntry` to `false` in `.vscode/launch.json`.
 
 For other IDEs, set the Xdebug debugging port to `9001`.
 
@@ -92,7 +99,13 @@ If `host.docker.internal` does not resolve within the container, update the xdeb
 xdebug.client_host = 192.168.65.2
 ```
 
-## Xdebug profiler
+## Code profiling
+
+Code profiling comes in 2 variants.
+
+_Note_: Disable Xdebug debugger `xdebug.remote_enable` for accurate measurements.
+
+## Xdebug
 
 To start profiling, add the `XDEBUG_PROFILE` variable to the request as a GET, POST or COOKIE.
 
@@ -100,16 +113,12 @@ To start profiling, add the `XDEBUG_PROFILE` variable to the request as a GET, P
 
 Profiles are stored in the `log` directory and can be analyzed with tools such as [webgrind](https://github.com/jokkedk/webgrind).
 
-## SPX profiler
-
-To start profiling with SPX:
+## SPX
 
 - Access the [SPX control panel](http://localhost/?SPX_KEY=dev&SPX_UI_URI=/)
 - Check checkbox `Whether to enable SPX profiler for your current browser session. No performance impact for other clients.`
-- Run script to profile
+- Run the script to profile
 - Refresh the SPX control panel tab and the report will be available at the bottom of the screen. Click it to show the report in a new tab.
-
-_Note_: Disable Xdebug debugger `xdebug.remote_enable` for accurate measurements.
 
 ## connect to database
 
