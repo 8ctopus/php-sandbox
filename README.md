@@ -29,9 +29,9 @@ The setup consists of 2 Docker images:
 
 _Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/microsoft/WSL/issues/4739), you need to use the legacy Hyper-V.
 
-## download php sandbox
+## download
 
-You can either download the latest version from the `tags` within the `Releases` section in the right sidebar or `git clone` the repository.
+You can either [download the latest version](https://github.com/8ctopus/php-sandbox/tags) from the `tags` within the `Releases` section in the right sidebar or `git clone` the repository.
 
 ```sh
 git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
