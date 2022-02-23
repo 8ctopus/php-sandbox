@@ -29,10 +29,17 @@ The setup consists of 2 Docker images:
 
 _Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/microsoft/WSL/issues/4739), you need to use the legacy Hyper-V.
 
-## start developing
+## download php sandbox
+
+You can either download the latest version from the `Releases` section in the right sidebar or `git clone` the repository.
 
 ```sh
 git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
+```
+
+## start developing
+
+```sh
 cd php-sandbox
 
 # start docker desktop
@@ -51,7 +58,7 @@ http://localhost/
 
 ## source code
 
-The source code is located inside the `html` directory.
+All your source code goes inside the `html` directory. The `public` sub-directory is the web server `DOCUMENT_ROOT` (visible files).
 
 ## more docker commands
 
