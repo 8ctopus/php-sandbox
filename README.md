@@ -31,7 +31,7 @@ _Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/micro
 
 ## download php sandbox
 
-You can either download the latest version from the `Releases` section in the right sidebar or `git clone` the repository.
+You can either download the latest version from the `tags` within `Releases` section in the right sidebar or `git clone` the repository.
 
 ```sh
 git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
