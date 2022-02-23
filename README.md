@@ -21,9 +21,9 @@ The setup consists of 2 Docker images:
 ## cool features
 
 - php 8 or 7
-- Just works with any domain name and https is configured out of the box.
-- All changes to config files are automatically applied (hot reload).
-- Xdebug is configured for remote debugging in VSCode.
+- Just works with any domain name and https is configured out of the box
+- All changes to config files are automatically applied (hot reload)
+- Xdebug is configured for remote debugging in VSCode
 - Profile your code with SPX
 
 _Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/microsoft/WSL/issues/4739), you need to use the legacy Hyper-V.
@@ -34,17 +34,17 @@ _Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/micro
 git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
 cd php-sandbox
 
+# start docker
+
 # start containers in detached mode on linux and mac in shell (php 8 by default, edit docker-compose.yml to use php 7.4)
 docker-compose up &
 
 # start containers in detached mode on Windows in cmd
 start /B docker-compose up
+
+# open browser
+http://localhost/
 ```
-
-## access website
-
-    http://localhost/
-    https://localhost/
 
 ## source code
 
@@ -66,9 +66,9 @@ docker-compose down
 docker-compose down -v
 ```
 
-## set website domain name
+## website domain name
 
-To set the domain name to www.test.com, edit the environment variable in the docker-compose file
+To set the domain name to www.test.com, edit the environment variable in the `docker-compose.yml` file
 
     environment:
       - DOMAIN=www.test.com
