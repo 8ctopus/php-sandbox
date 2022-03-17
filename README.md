@@ -5,13 +5,13 @@ A super lightweight LAMP (Linux Apache MySQL PHP) development environment based 
 The setup consists of 2 Docker images:
 
 - web server 61 MB
-    - Apache 2.4.52 with SSL
-    - php-fpm 8.0.14 or 7.4.21
-    - Xdebug 3.1.2 - debugger and profiler
+    - Apache 2.4.53 with SSL
+    - php-fpm 8.0.16 or 7.4.21
+    - Xdebug 3.1.3 - debugger and profiler
     - [SPX prolifer 0.4.11](https://github.com/NoiseByNorthwest/php-spx)
     - composer 2.1.12
-    - zsh 5.8
-    - Alpine 3.15.0
+    - zsh 5.8.1
+    - Alpine 3.15.1
 
 - database server 195 MB
     - MariaDB 10.6.4
@@ -80,7 +80,7 @@ docker exec -it sandbox zsh
 docker exec -it sandbox-db zsh
 ```
 
-## website domain name
+## set domain name
 
 To set the domain name to www.test.com, edit the environment variable in the `docker-compose.yml` file
 
@@ -93,7 +93,7 @@ Add this line to the system host file. Editing the file requires administrator p
 
     127.0.0.1 test.net www.test.net
 
-## https
+## add https
 
 To remove "Your connection is not private" nag screens, import the certificate authority file under ssl/certificate_authority.pem in the browser's certificates under Trusted Root Certification Authorities.
 
@@ -101,7 +101,8 @@ guide: https://support.globalsign.com/digital-certificates/digital-certificate-i
 
 ## Xdebug debugger
 
-This repository is configured to debug php code in Visual Studio Code. To start debugging, open the VSCode workspace then select `Run > Start debugging` then open the site in the browser. The default config is to stop on entry which stops at the first line in the file. To only stop on breakpoints, set `stopOnEntry` to `false` in `.vscode/launch.json`.
+This repository is configured to debug php code in Visual Studio Code. To start debugging, open the VSCode workspace then select `Run > Start debugging` then open the site in the browser.
+The default config is to stop on entry which stops at the first line in the file. To only stop on breakpoints, set `stopOnEntry` to `false` in `.vscode/launch.json`.
 
 For other IDEs, set the Xdebug debugging port to `9001`.
 
@@ -143,7 +144,7 @@ password: 123
 port: 3306
 ```
 
-## access containers through command line
+## access container command line
 
 ```sh
 # web container
