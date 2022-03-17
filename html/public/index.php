@@ -2,7 +2,7 @@
 
 require_once '../header.php';
 
-echo 'Hello from sandbox docker container!' . PHP_EOL . PHP_EOL;
+echo 'Hello from docker container!' . PHP_EOL . PHP_EOL;
 
 // list current directory files
 $it = new RecursiveDirectoryIterator(__DIR__, FilesystemIterator::SKIP_DOTS);
