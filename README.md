@@ -1,8 +1,21 @@
 # php sandbox
 
-A super lightweight LAMP (Linux Apache MySQL PHP) development environment based on Docker (approx 250 MB).
+A super lightweight LAMP (Linux, Apache, MySQL, PHP) php development environment based on Docker.
 
-The setup consists of 2 Docker images:
+## features
+
+- php 8.0 or 7.4
+- Just works with any domain name and https is configured out of the box
+- All changes to config files are automatically applied (hot reload)
+- Xdebug is configured for php step by step debugging in VSCode
+- Profile php code with SPX
+- Javascript step by step debugging in VSCode
+
+_Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/microsoft/WSL/issues/4739), you need to use the legacy Hyper-V.
+
+## setup
+
+The setup consists of 2 Docker images of approx 250 MB.
 
 - web server 61 MB
     - Apache 2.4.53 with SSL
@@ -18,17 +31,6 @@ The setup consists of 2 Docker images:
     - zsh 5.8
     - Alpine 3.15.0
 
-## cool features
-
-- php 8.0 or 7.4
-- Just works with any domain name and https is configured out of the box
-- All changes to config files are automatically applied (hot reload)
-- Xdebug is configured for php step by step debugging in VSCode
-- Profile php code with SPX
-- Javascript step by step debugging in VSCode
-
-_Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/microsoft/WSL/issues/4739), you need to use the legacy Hyper-V.
-
 ## download
 
 You can either [download the latest version](https://github.com/8ctopus/php-sandbox/tags) from the `tags` within the `Releases` section in the right sidebar or `git clone` the repository.
@@ -39,7 +41,7 @@ git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
 
 ## start developing
 
-Start docker desktop then:
+Start Docker Desktop then:
 
 ```sh
 cd php-sandbox
