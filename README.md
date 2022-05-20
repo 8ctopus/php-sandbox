@@ -4,7 +4,7 @@ A super lightweight LAMP (Linux, Apache, MySQL, PHP) php development environment
 
 ## features
 
-- php 8.0 or 7.4
+- php 8.1, 8.0 or 7.4
 - Just works with any domain name and https is configured out of the box
 - All changes to config files are automatically applied (hot reload)
 - Xdebug is configured for php step by step debugging in VSCode
