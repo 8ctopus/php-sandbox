@@ -4,7 +4,7 @@ A super lightweight LAMP (Linux, Apache, MySQL, PHP) php development environment
 
 ## features
 
-- php 8.1, 8.0 or 7.4
+- php 8.2.0 RC2, 8.1, 8.0 or 7.4
 - Just works with any domain name and https is configured out of the box
 - All changes to config files are automatically applied (hot reload)
 - Xdebug is configured for php step by step debugging in VSCode
@@ -18,18 +18,18 @@ _Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/micro
 The setup consists of 2 Docker images of approx 250 MB.
 
 - web server 61 MB
-    - Apache 2.4.53 with SSL
-    - php-fpm 8.0.16 or 7.4.21
-    - Xdebug 3.1.3 - debugger and profiler
-    - [SPX prolifer 0.4.11](https://github.com/NoiseByNorthwest/php-spx)
-    - composer 2.1.12
-    - zsh 5.8.1
-    - Alpine 3.15.1
+    - Apache 2.4.54 with SSL
+    - php-fpm 8.2.0 RC2, 8.1.10, 8.0.17 or 7.4.21
+    - Xdebug 3.2.0 alpha 3 - debugger and profiler
+    - [SPX prolifer 0.4.12](https://github.com/NoiseByNorthwest/php-spx)
+    - composer 2.4.2
+    - zsh 5.9
+    - Alpine 3.16.2
 
 - database server 195 MB
-    - MariaDB 10.6.4
-    - zsh 5.8
-    - Alpine 3.15.0
+    - MariaDB 10.6.10
+    - zsh 5.9
+    - Alpine 3.16.2
 
 ## download
 
@@ -39,14 +39,14 @@ You can either [download the latest version](https://github.com/8ctopus/php-sand
 git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
 ```
 
-## start developing
+## start coding
 
-Start Docker Desktop then:
+Start `Docker Desktop` then:
 
 ```sh
 cd php-sandbox
 
-# edit `docker-compose.yml` to use php 7.4, no changes required for php 8.0.
+# edit `docker-compose.yml` to use php 7.4, 8.0, 8.1 no changes required for php 8.2.
 
 # start containers in detached mode on Windows in cmd
 start /B docker-compose up
@@ -60,7 +60,7 @@ http://localhost/
 
 ## source code
 
-All your source code goes inside the `html` directory. The `public` sub-directory is the web server `DOCUMENT_ROOT` (visible files).
+All your source code goes inside the `html` directory. The `public` sub-directory is the web server `DOCUMENT_ROOT` (files servable by Apache server).
 
 ## more docker commands
 
