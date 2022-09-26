@@ -5,6 +5,21 @@
  * based on https://www.php.net/manual/en/mysqli.examples-basic.php
  */
 
+$autoLoad = '../vendor/autoload.php';
+
+if (!file_exists($autoLoad)) {
+    echo 'please run "docker exec sandbox composer install" and refresh the page';
+    exit;
+}
+
+// include composer dependencies
+require_once $autoLoad;
+
+// create whoops object
+$whoops = new \Whoops\Run();
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->register();
+
 require_once '../header.php';
 
 $mysqli = new mysqli("sandbox-db", "root", "123", "test");
@@ -17,11 +32,11 @@ if ($mysqli->connect_errno) {
     exit();
 }
 
-$sql = <<<TAG
+$sql = <<<SQL
     CREATE TABLE IF NOT EXISTS `test` (
         `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
     );
-TAG;
+SQL;
 
 if (!$result = $mysqli->query($sql)) {
     echo "Sorry, the website is experiencing problems.\n";
@@ -32,9 +47,9 @@ if (!$result = $mysqli->query($sql)) {
     exit();
 }
 
-$sql = <<<TAG
+$sql = <<<SQL
     SHOW TABLES;
-TAG;
+SQL;
 
 if (!$result = $mysqli->query($sql)) {
     echo "Sorry, the website is experiencing problems.\n";
@@ -54,6 +69,6 @@ if ($result->num_rows === 0) {
 
 print_r($result->fetch_assoc());
 
-echo "<h1>It works!<h1>\n";
+echo "<h1>Database OK!<h1>\n";
 
 require_once '../footer.php';
