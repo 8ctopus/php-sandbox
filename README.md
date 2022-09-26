@@ -62,26 +62,6 @@ http://localhost/
 
 All your source code goes inside the `html` directory. The `public` sub-directory is the web server `DOCUMENT_ROOT` (files servable by Apache server).
 
-## more docker commands
-
-```sh
-# view logs
-docker-compose logs -f
-
-# stop containers
-docker-compose stop
-
-# delete containers
-docker-compose down
-
-# delete containers and volume (deletes database)
-docker-compose down -v
-
-## get shell access to container
-docker exec -it sandbox zsh
-docker exec -it sandbox-db zsh
-```
-
 ## set domain name
 
 To set the domain name to www.test.com, edit the environment variable in the `docker-compose.yml` file
@@ -146,7 +126,7 @@ password: 123
 port: 3306
 ```
 
-## access container command line
+## access container
 
 ```sh
 # web container
@@ -156,11 +136,24 @@ docker exec -it sandbox zsh
 docker exec -it sandbox-db zsh
 ```
 
-## use composer
+## more docker commands
 
 ```sh
+# view logs
+docker-compose logs -f
+
+# stop containers
+docker-compose stop
+
+# delete containers
+docker-compose down
+
+# delete containers and volume (deletes database)
+docker-compose down -v
+
+## get shell access to container
 docker exec -it sandbox zsh
-composer install
+docker exec -it sandbox-db zsh
 ```
 
 ## extend docker image
