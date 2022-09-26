@@ -31,9 +31,9 @@ The setup consists of 2 Docker images of approx 250 MB.
     - zsh 5.9
     - Alpine 3.16.2
 
-## download
+## install
 
-You can either [download the latest version](https://github.com/8ctopus/php-sandbox/tags) from the `tags` within the `Releases` section in the right sidebar or `git clone` the repository.
+You can either [download the latest version](https://github.com/8ctopus/php-sandbox/tags) or `git clone` the repository.
 
 ```sh
 git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
