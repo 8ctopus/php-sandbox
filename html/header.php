@@ -4,4 +4,4 @@
 <link href="css/neat.css" rel="stylesheet">
 </head>
 <body>
-    <a class="home" href="/">Back home</a>
+    <a class="home" href="/">home</a>

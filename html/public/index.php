@@ -14,9 +14,10 @@ while ($it->valid()) {
         $file = $it->getSubPath() .'/'. $it->getSubPathName();
 
         switch ($it->getSubPathName()) {
-            case 'index.php':
-            case 'favicon.ico':
+            case 'ajax.php':
             case 'css':
+            case 'favicon.ico':
+            case 'index.php':
                 break;
 
             default:
