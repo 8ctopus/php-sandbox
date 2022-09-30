@@ -14,6 +14,7 @@ while ($it->valid()) {
         switch ($it->getSubPathName()) {
             case 'index.php':
             case 'favicon.ico':
+            case 'css':
                 break;
 
             default:
