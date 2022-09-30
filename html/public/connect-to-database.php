@@ -2,7 +2,6 @@
 
 /**
  * Test database connection
- * based on https://www.php.net/manual/en/mysqli.examples-basic.php
  */
 
 $autoLoad = '../vendor/autoload.php';
@@ -22,53 +21,61 @@ $whoops->register();
 
 require_once '../header.php';
 
-$mysqli = new mysqli("sandbox-db", "root", "123", "test");
+echo "<h1>Test database...</h1>\n";
 
-if ($mysqli->connect_errno) {
-    echo "Sorry, this website is experiencing problems.\n";
-    echo "Error: Failed to make a MySQL connection, here is why:\n";
-    echo "Errno.". $mysqli->connect_errno ."\n";
-    echo "Error.". $mysqli->connect_error ."\n";
-    exit();
-}
+$params = [
+    'host' => 'sandbox-db',
+    'database' => 'test',
+    'user' => 'root',
+    'pass' => '123',
+];
+
+$db = new PDO("mysql:host={$params['host']};dbname={$params['database']};charset=utf8", $params['user'], $params['pass'], [
+    // use exceptions
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    // get arrays
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    // better prevention against SQL injections
+    PDO::ATTR_EMULATE_PREPARES => false,
+]);
 
 $sql = <<<SQL
     CREATE TABLE IF NOT EXISTS `test` (
         `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-    );
+    )
 SQL;
 
-if (!$result = $mysqli->query($sql)) {
-    echo "Sorry, the website is experiencing problems.\n";
-    echo "Error: Our query failed to execute and here is why:\n";
-    echo "Query.". $sql ."\n";
-    echo "Errno.". $mysqli->errno ."\n";
-    echo "Error.". $mysqli->error ."\n";
-    exit();
-}
+$query = $db->prepare($sql);
+$query->execute();
+
+$sql = <<<SQL
+    CREATE TABLE IF NOT EXISTS `test2` (
+        `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+    )
+SQL;
+
+$query = $db->prepare($sql);
+$query->execute();
 
 $sql = <<<SQL
     SHOW TABLES;
 SQL;
 
-if (!$result = $mysqli->query($sql)) {
-    echo "Sorry, the website is experiencing problems.\n";
-    echo "Error: Our query failed to execute and here is why:\n";
-    echo "Query.". $sql ."\n";
-    echo "Errno.". $mysqli->errno ."\n";
-    echo "Error.". $mysqli->error ."\n";
-    exit();
+$query = $db->prepare($sql);
+$query->execute();
+
+if ($query->rowCount() === 0) {
+    throw new Exception('database has no tables');
 }
 
-if ($result->num_rows === 0) {
-    echo "Sorry, the website is experiencing problems.\n";
-    echo "Error: Our query failed to execute and here is why:\n";
-    echo "test database has no tables\n";
-    exit();
+echo "<p>Database has {$query->rowCount()} tables</p>\n";
+echo "<ul>\n";
+
+while ($row = $query->fetch()) {
+    echo "<li>{$row['Tables_in_test']}</li>\n";
 }
 
-print_r($result->fetch_assoc());
-
-echo "<h1>Database OK!<h1>\n";
+echo "</ul>\n";
+echo "<h1>Test database - OK!<h1>\n";
 
 require_once '../footer.php';
