@@ -10,12 +10,12 @@ A super lightweight LAMP (Linux, Apache, MySQL, PHP) php development environment
 - Apache and php configuration files are exposed on the host for easy edit
 - All changes to configuration files are automatically applied (hot reload)
 - Xdebug is configured for step by step debugging and profiling in Visual Studio Code
-- Profile php code with SPX or Xdebug
-- Javascript step by step debugging in VSCode
+- Profile php code with [SPX profiler](https://github.com/NoiseByNorthwest/php-spx) or Xdebug
+- Javascript step by step debugging in Visual Studio Code
 
 ## setup
 
-The setup consists of 2 Docker images with a combined size of 100 MB.
+The setup consists of 2 Docker images with a combined size of approximately 110 MB.
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
     - Apache 2.4.54 with SSL
