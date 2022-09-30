@@ -2,7 +2,9 @@
 
 require_once '../header.php';
 
-echo "<h1>Hello from docker container</h1>\n";
+$hostname = gethostname();
+
+echo "<h1>Hello from {$hostname}!</h1>\n";
 echo "<p>Browse the examples:</p>\n";
 echo "<ul>\n";
 
