@@ -9,13 +9,13 @@ class magic
 {
     public function __call($method, $args)
     {
-        echo "You called method '{$method}' with argument {$args}.\n";
+        echo "<p>You called method '{$method}' with argument {$args}.</p>\n";
         //var_dump($key, $args);
     }
 
     public function __invoke($arg)
     {
-        echo "You called method __invoke() with argument '{$arg}'.\n";
+        echo "<p>You called method __invoke() with argument '{$arg}'.</p>\n";
     }
 }
 

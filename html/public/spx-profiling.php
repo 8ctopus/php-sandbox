@@ -6,7 +6,11 @@
 
 require_once '../header.php';
 
-echo '<a href="/?SPX_KEY=dev&SPX_UI_URI=/" target="_blank">SPX control panel</a>' . PHP_EOL . PHP_EOL;
+echo "<h1>php SPX profiler</h1>";
+
+echo "<p><a href=\"/?SPX_KEY=dev&SPX_UI_URI=/\" target=\"_blank\">SPX control panel</a></p>\n";
+
+echo "<pre>\n";
 
 main();
 

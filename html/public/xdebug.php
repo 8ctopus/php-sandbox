@@ -6,7 +6,9 @@
 
 require_once '../header.php';
 
-echo 'REMOTE ADDR: '. $_SERVER['REMOTE_ADDR'] . PHP_EOL . PHP_EOL;
+echo "<h1>Test Xdebug</h1>";
+
+echo "<p>REMOTE ADDR: {$_SERVER['REMOTE_ADDR']}</p>\n";
 
 class Strings
 {

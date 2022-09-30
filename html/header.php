@@ -5,4 +5,3 @@
 </head>
 <body>
     <a class="home" href="/">Back home</a>
-    <pre>

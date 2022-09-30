@@ -2,7 +2,9 @@
 
 require_once '../header.php';
 
-echo 'Hello from docker container!' . PHP_EOL . PHP_EOL;
+echo "<h1>Hello from docker container</h1>\n";
+echo "<p>Browse the examples:</p>\n";
+echo "<ul>\n";
 
 // list current directory files
 $it = new RecursiveDirectoryIterator(__DIR__, FilesystemIterator::SKIP_DOTS);
@@ -18,12 +20,14 @@ while ($it->valid()) {
                 break;
 
             default:
-                echo "<a href=\"{$file}\">{$file}</a>" . PHP_EOL;
+                echo "<li><a href=\"{$file}\">{$file}</a></li>\n";
                 break;
         }
     }
 
     $it->next();
 }
+
+echo "</ul>\n";
 
 require_once '../footer.php';
