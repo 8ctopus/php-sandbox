@@ -62,9 +62,9 @@ _Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/micro
 
 ## source code
 
-All your source code goes inside the `html` directory. The `public` sub-directory is the web server `DOCUMENT_ROOT` (files servable by Apache server).
+All your source code goes inside the `html` directory. The `public` sub-directory is the web server `DOCUMENT_ROOT`: the directory that the Apache webserver serves.
 
-## set domain name
+## customize domain name
 
 To set the domain name to www.test.com, edit the environment variable in the `docker-compose.yml` file
 
@@ -73,20 +73,18 @@ To set the domain name to www.test.com, edit the environment variable in the `do
 
 Add this line to the system host file. Editing the file requires administrator privileges.
 
+    /etc/hosts
     C:\Windows\System32\drivers\etc\hosts
 
     127.0.0.1 test.net www.test.net
 
 ## add https
 
-To remove "Your connection is not private" nag screens, import the certificate authority file under ssl/certificate_authority.pem in the browser's certificates under Trusted Root Certification Authorities.
-
-guide: https://support.globalsign.com/digital-certificates/digital-certificate-installation/install-client-digital-certificate-windows-using-chrome
+To remove "Your connection is not private" nag screens, import the certificate authority file under ssl/certificate_authority.pem in the browser's certificates under Trusted Root Certification Authorities. guide: https://support.globalsign.com/digital-certificates/digital-certificate-installation/install-client-digital-certificate-windows-using-chrome
 
 ## Xdebug debugger
 
-This repository is configured to debug php code in Visual Studio Code. To start debugging, open the VSCode workspace then select `Run > Start debugging` then open the site in the browser.
-The default config is to stop on entry which stops at the first line in the file. To only stop on breakpoints, set `stopOnEntry` to `false` in `.vscode/launch.json`.
+This repository is configured to debug php code in Visual Studio Code. To start debugging, open `php-sandbox.code-workspace` then select `Run > Start debugging` then open the site in the browser. The default config is to stop on entry which stops at the first line in the source code. To only stop on breakpoints, set `stopOnEntry` to `false` in `.vscode/launch.json`.
 
 For other IDEs, set the Xdebug debugging port to `9001`.
 
@@ -102,9 +100,14 @@ xdebug.client_host = 192.168.65.2
 
 Code profiling comes in 2 variants.
 
-_Note_: Disable Xdebug debugger `xdebug.remote_enable` for accurate measurements.
+### SPX
 
-## Xdebug
+- Access the [SPX control panel](http://localhost/?SPX_KEY=dev&SPX_UI_URI=/)
+- Check checkbox `Whether to enable SPX profiler for your current browser session. No performance impact for other clients.`
+- Run the script to profile
+- Refresh the SPX control panel tab and the report will be available at the bottom of the screen. Click it to show the report in a new tab.
+
+### Xdebug
 
 To start profiling, add the `XDEBUG_PROFILE` variable to the request as a GET, POST or COOKIE.
 
@@ -112,21 +115,16 @@ To start profiling, add the `XDEBUG_PROFILE` variable to the request as a GET, P
 
 Profiles are stored in the `log` directory and can be analyzed with tools such as [webgrind](https://github.com/jokkedk/webgrind).
 
-## SPX
+_Note_: Disable Xdebug debugger `xdebug.remote_enable` for accurate measurements.
 
-- Access the [SPX control panel](http://localhost/?SPX_KEY=dev&SPX_UI_URI=/)
-- Check checkbox `Whether to enable SPX profiler for your current browser session. No performance impact for other clients.`
-- Run the script to profile
-- Refresh the SPX control panel tab and the report will be available at the bottom of the screen. Click it to show the report in a new tab.
+## database access
 
-## connect to database
+You can connect to the database using your favorite MySQL client
 
-```
-hostname: localhost / sandbox-db
-user: root
-password: 123
-port: 3306
-```
+    hostname: localhost / sandbox-db
+    user: root
+    password: 123
+    port: 3306
 
 ## access container
 
@@ -160,7 +158,7 @@ docker exec -it sandbox-db zsh
 
 ## extend docker image
 
-In this example, we add the php-curl extension.
+In this example, we add the `php-curl` extension.
 
 ```sh
 docker-compose up --detach
