@@ -4,14 +4,15 @@ A super lightweight LAMP (Linux, Apache, MySQL, PHP) php development environment
 
 ## features
 
-- php 8.2.0 RC2, 8.1, 8.0 or 7.4
-- Just works with any domain name and https is configured out of the box
-- All changes to config files are automatically applied (hot reload)
-- Xdebug is configured for php step by step debugging in VSCode
-- Profile php code with SPX
+- php 8.2, 8.1, 8.0 or 7.4 along with the most commonly used extensions
+- MariaDB
+- Just works with any domain name
+- https is configured out of the box
+- Apache and php configuration files are exposed on the host for easy edit
+- All changes to configuration files are automatically applied (hot reload)
+- Xdebug is configured for step by step debugging and profiling in Visual Studio Code
+- Profile php code with SPX or Xdebug
 - Javascript step by step debugging in VSCode
-
-_Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/microsoft/WSL/issues/4739), you need to use the legacy Hyper-V.
 
 ## setup
 
@@ -57,6 +58,8 @@ docker-compose up &
 # open browser
 http://localhost/
 ```
+
+_Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/microsoft/WSL/issues/4739), you need to use the legacy Hyper-V.
 
 ## source code
 
