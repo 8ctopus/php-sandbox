@@ -15,9 +15,9 @@ _Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/micro
 
 ## setup
 
-The setup consists of 2 Docker images of approx 250 MB.
+The setup consists of 2 Docker images with a combined size of 100 MB.
 
-- web server 61 MB
+- web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
     - Apache 2.4.54 with SSL
     - php-fpm 8.2.0 RC2, 8.1.10, 8.0.17 or 7.4.21
     - Xdebug 3.2.0 alpha 3 - debugger and profiler
@@ -26,7 +26,7 @@ The setup consists of 2 Docker images of approx 250 MB.
     - zsh 5.9
     - Alpine 3.16.2
 
-- database server 195 MB
+- database server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/mariadb-alpine?sort=semver)
     - MariaDB 10.6.10
     - zsh 5.9
     - Alpine 3.16.2
