@@ -46,7 +46,7 @@ Start `Docker Desktop` then:
 ```sh
 cd php-sandbox
 
-# edit `docker-compose.yml` to use php 7.4, 8.0, 8.1 no changes required for php 8.2.
+# edit `docker-compose.yml` if you want to use php 7.4, 8.0, 8.1, no changes required for php 8.2.
 
 # start containers in detached mode on Windows in cmd
 start /B docker-compose up
@@ -73,8 +73,8 @@ To set the domain name to www.test.com, edit the environment variable in the `do
 
 Add this line to the system host file. Editing the file requires administrator privileges.
 
-    /etc/hosts
-    C:\Windows\System32\drivers\etc\hosts
+    Windows | C:\Windows\System32\drivers\etc\hosts
+    Linux/Mac | /etc/hosts
 
     127.0.0.1 test.net www.test.net
 
