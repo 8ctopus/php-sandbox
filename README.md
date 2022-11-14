@@ -5,7 +5,7 @@ A super lightweight LAMP (Linux, Apache, MySQL, PHP) php development environment
 ## features
 
 - Apache, php-fpm and MariaDB
-- php 8.2 RC5, 8.1, 8.0 or 7.4 along with the most commonly used extensions
+- php 8.2 RC6, 8.1, 8.0 or 7.4 along with the most commonly used extensions
 - Just works with any domain name and https is configured out of the box
 - Apache and php configuration files are exposed on the host for easy edit
 - All changes to configuration files are automatically applied (hot reload)
@@ -19,10 +19,10 @@ The setup consists of 2 Docker images with a combined size of approximately 110 
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
     - Apache 2.4.54 with SSL
-    - php-fpm 8.2.0 RC5, 8.1.10, 8.0.17 or 7.4.21
-    - Xdebug 3.2.0 RC1 - debugger and profiler
+    - php-fpm 8.2.0 RC6, 8.1.10, 8.0.17 or 7.4.21
+    - Xdebug 3.2.0 RC2 - debugger and profiler
     - [SPX prolifer dev-master](https://github.com/NoiseByNorthwest/php-spx)
-    - composer 2.4.2
+    - composer 2.4.4
     - zsh 5.9
     - Alpine edge
 

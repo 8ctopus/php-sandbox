@@ -88,12 +88,52 @@ $staff = [
     ],
 ];
 
+/**
+ * Variable to PDO type
+ *
+ * @param  mixed  $value
+ *
+ * @return int PDO type
+ */
+function typeToParam(mixed $value) : int
+{
+    switch ($type = gettype($value)) {
+        case 'boolean':
+            return PDO::PARAM_BOOL;
+
+        case 'integer':
+            return PDO::PARAM_INT;
+
+        case 'NULL':
+            return PDO::PARAM_NULL;
+
+        case 'string':
+            return PDO::PARAM_STR;
+
+        default:
+            throw new Exception("unsupported type - {$type}");
+    }
+}
+
+/**
+ * Bind values to PDO statement
+ *
+ * @param  PDOStatement $statement
+ * @param  array        $data
+ *
+ * @return PDOStatement
+ */
+function bind(PDOStatement $statement, array $data) : PDOStatement
+{
+    foreach ($data as $key => $value) {
+        $statement->bindValue($key, $value, typeToParam($value));
+    }
+
+    return $statement;
+}
+
 foreach ($staff as $member) {
-    $query->bindValue('birthday', $member['birthday'], PDO::PARAM_STR);
-    $query->bindValue('name', $member['name'], PDO::PARAM_STR);
-    $query->bindValue('salary', $member['salary'], PDO::PARAM_INT);
-    $query->bindValue('boss', $member['boss'], PDO::PARAM_BOOL);
-    $query->execute();
+    bind($query, $member)->execute();
 }
 
 $sql = <<<SQL
