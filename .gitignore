@@ -1,5 +1,13 @@
 # docker
 /docker/
 
+# sites
+/sites/config/ssl/*
+!/sites/config/ssl/.gitkeep
+/sites/*/logs/*
+!/sites/*/logs/.gitkeep
+/sites/*/ssl/*
+!/sites/*/ssl/.gitkeep
+
 # other
 /*.sublime-workspace
