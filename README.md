@@ -7,6 +7,7 @@ A super lightweight LAMP (Linux, Apache, MySQL, PHP) php development environment
 - Apache, php-fpm and MariaDB
 - php 8.2 RC6, 8.1, 8.0 or 7.4 along with the most commonly used extensions
 - Just works with any domain name and https is configured out of the box
+- Support for multiple virtual hosts
 - Apache and php configuration files are exposed on the host for easy edit
 - All changes to configuration files are automatically applied (hot reload)
 - Xdebug is configured for step by step debugging and profiling in Visual Studio Code
