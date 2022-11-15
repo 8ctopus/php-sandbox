@@ -5,7 +5,7 @@ A super lightweight LAMP (Linux, Apache, MySQL, PHP) php development environment
 ## features
 
 - Apache, php-fpm and MariaDB
-- php 8.2 RC6, 8.1, 8.0 or 7.4 along with the most commonly used extensions
+- php 8.2 RC6 along with the most commonly used extensions
 - Just works with any domain name and https is configured out of the box
 - Support for multiple virtual hosts
 - Apache and php configuration files are exposed on the host for easy edit
@@ -20,7 +20,7 @@ The setup consists of 2 Docker images with a combined size of approximately 110 
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
     - Apache 2.4.54 with SSL
-    - php-fpm 8.2.0 RC6, 8.1.10, 8.0.17 or 7.4.21
+    - php-fpm 8.2.0 RC6
     - Xdebug 3.2.0 RC2 - debugger and profiler
     - [SPX prolifer dev-master](https://github.com/NoiseByNorthwest/php-spx)
     - composer 2.4.4
@@ -46,8 +46,6 @@ Start `Docker Desktop` then:
 
 ```sh
 cd php-sandbox
-
-# edit `docker-compose.yml` if you want to use php 7.4, 8.0, 8.1, no changes required for php 8.2.
 
 # start containers in detached mode on Windows in cmd
 start /B docker-compose up
