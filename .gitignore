@@ -1,9 +1,5 @@
 # docker
 /docker/
 
-# sites
-/sites/
-!/sites/localhost/html/
-
 # other
 /*.sublime-workspace
