@@ -52,9 +52,6 @@ start /B docker-compose up
 
 # start containers in detached mode on linux and mac in shell
 docker-compose up &
-
-# open browser
-http://localhost/
 ```
 
 _Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/microsoft/WSL/issues/4739), you need to use the legacy Hyper-V.
