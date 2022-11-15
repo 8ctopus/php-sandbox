@@ -8,6 +8,7 @@
 !/sites/*/logs/.gitkeep
 /sites/*/ssl/*
 !/sites/*/ssl/.gitkeep
+/sites/*/html/vendor/*
 
 # other
 /*.sublime-workspace
