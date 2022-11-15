@@ -9,6 +9,7 @@
 /sites/*/ssl/*
 !/sites/*/ssl/.gitkeep
 /sites/*/html/vendor/*
+/sites/generate-ssl.sh
 
 # other
 /*.sublime-workspace
