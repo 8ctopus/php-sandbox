@@ -7,7 +7,16 @@
 $autoLoad = '../vendor/autoload.php';
 
 if (!file_exists($autoLoad)) {
-    echo 'please run "docker exec sandbox composer install" and refresh the page';
+    header('Content-type: text');
+
+    echo <<<TXT
+        please run and refresh the page:
+
+        docker exec -it sandbox zsh
+        cd localhost\\html
+        composer install
+    TXT;
+
     exit;
 }
 
