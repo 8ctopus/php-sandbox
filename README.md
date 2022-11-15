@@ -28,9 +28,9 @@ The setup consists of 2 Docker images with a combined size of approximately 110 
     - Alpine edge
 
 - database server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/mariadb-alpine?sort=semver)
-    - MariaDB 10.6.10
+    - MariaDB 10.6.11
     - zsh 5.9
-    - Alpine 3.16.2
+    - Alpine edge
 
 ## install
 
