@@ -34,12 +34,8 @@ services:
       - mariadb
     volumes:
       # development directory
-      - ./html/:/var/www/html/
-      # expose apache logs to host
-      - ./docker/log/:/var/log/apache2/
+      - ./sites/:/sites/
       # expose apache2 and php config to host
       - ./docker/etc/:/docker/etc/
-      # expose ssl certificates to host
-      - ./docker/ssl/:/etc/ssl/apache2/
 volumes:
   database:
