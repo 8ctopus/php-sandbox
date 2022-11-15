@@ -16,7 +16,7 @@ if (!file_exists($autoLoad)) {
         please run and refresh the page:
 
         docker exec -it sandbox zsh
-        cd localhost\\html
+        cd localhost/html
         composer install
     TXT;
 
