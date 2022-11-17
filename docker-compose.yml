@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   mariadb:
-    image: 8ct8pus/mariadb-alpine:1.0.9
+    image: 8ct8pus/mariadb-alpine:1.0.10
     container_name: sandbox-db
     ports:
       - 3306:3306
@@ -13,7 +13,7 @@ services:
       - database:/var/lib/mysql/
   web:
     # php 8.2.0 RC6 with virtual hosts
-    image: 8ct8pus/apache-php-fpm-alpine:2.0.3
+    image: 8ct8pus/apache-php-fpm-alpine:2.0.4
     hostname: sandbox
     container_name: sandbox
     ports:
