@@ -5,7 +5,7 @@ A super lightweight LAMP (Linux, Apache, MySQL, PHP) php development environment
 ## features
 
 - Apache, php-fpm and MariaDB
-- php 8.2 RC6 along with the most commonly used extensions
+- php 8.2 RC6, 8.1, 8.0, 7.4 along with the most commonly used extensions
 - Just works with any domain name and https is configured out of the box
 - Support for multiple virtual hosts
 - Apache and php configuration files are exposed on the host for easy edit
@@ -39,6 +39,8 @@ You can either [download the latest version](https://github.com/8ctopus/php-sand
 ```sh
 git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
 ```
+
+For older php versions 8.1, 8.0 and 7.4, you need to download an [older version](https://github.com/8ctopus/php-sandbox/releases/tag/1.2.8) and then choose the correct php version in `docker-compose.yml`.
 
 ## start coding
 
