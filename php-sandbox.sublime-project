@@ -2,9 +2,18 @@
 	"folders":
 	[
 		{
+            "name": "docker",
 			"path": "."
+		},
+        {
+            "name": "localhost",
+			"path": "./sites/localhost/html/"
+		},
+        {
+            "name": "test.com",
+			"path": "./sites/test/html/"
 		}
-	],
+    ],
 	"settings":
 	{
 		"debug.configurations":
