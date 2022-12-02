@@ -4,6 +4,8 @@
  * Test database connection
  */
 
+declare(strict_types=1);
+
 $autoLoad = '../vendor/autoload.php';
 
 if (!file_exists($autoLoad)) {

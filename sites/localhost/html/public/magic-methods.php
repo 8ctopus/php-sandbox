@@ -5,6 +5,8 @@
  * @note https://www.php.net/manual/en/language.oop5.magic.php
  */
 
+declare(strict_types=1);
+
 class magic
 {
     public function __call($method, $args)

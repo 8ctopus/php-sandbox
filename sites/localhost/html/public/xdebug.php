@@ -4,6 +4,8 @@
  * Test xdebug
  */
 
+declare(strict_types=1);
+
 require_once '../header.php';
 
 echo "<h1>Test Xdebug</h1>";

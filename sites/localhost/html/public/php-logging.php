@@ -4,6 +4,8 @@
  * Test php logging
  */
 
+declare(strict_types=1);
+
 require_once '../header.php';
 
 echo "<h1>test php logging</h1>\n";

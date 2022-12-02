@@ -5,6 +5,8 @@
  * In this case we include [Whoops](https://github.com/filp/whoops) which is a php error handler
  */
 
+declare(strict_types=1);
+
 $autoLoad = '../vendor/autoload.php';
 
 if (!file_exists($autoLoad)) {

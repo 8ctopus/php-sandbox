@@ -5,6 +5,8 @@
  * In this case we include [Dompdf](https://github.com/dompdf/dompdf) which is a PDF generator
  */
 
+declare(strict_types=1);
+
 use Dompdf\Dompdf;
 
 $autoLoad = '../vendor/autoload.php';

@@ -4,6 +4,8 @@
  * Test php spx
  */
 
+declare(strict_types=1);
+
 require_once '../header.php';
 
 echo "<h1>php SPX profiler</h1>";
