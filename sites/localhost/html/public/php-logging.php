@@ -17,4 +17,4 @@ define("CONSTANT", "Hello world.", true);
 
 echo "<pre>\n";
 
-echo file_get_contents('/var/log/apache2/error_log');
+echo file_get_contents('/sites/localhost/logs/error_log');
