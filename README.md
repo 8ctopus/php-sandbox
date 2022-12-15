@@ -5,7 +5,7 @@ A super lightweight LAMP (Linux, Apache, MySQL, PHP) php development environment
 ## features
 
 - Apache, php-fpm and MariaDB
-- php 8.2 RC6, 8.1, 8.0, 7.4 along with the most commonly used extensions
+- php 8.2, 8.1, 8.0, 7.4 along with the most commonly used extensions
 - Just works with any domain name and https is configured out of the box
 - Support for multiple virtual hosts
 - Apache and php configuration files are exposed on the host for easy edit
@@ -20,8 +20,8 @@ The setup consists of 2 Docker images with a combined size of approximately 110 
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
     - Apache 2.4.54 with SSL
-    - php-fpm 8.2.0 RC6
-    - Xdebug 3.2.0 RC2 - debugger and profiler
+    - php-fpm 8.2
+    - Xdebug 3.2.0 - debugger and profiler
     - [SPX prolifer dev-master](https://github.com/NoiseByNorthwest/php-spx)
     - composer 2.4.4
     - zsh 5.9
@@ -40,7 +40,7 @@ You can either [download the latest version](https://github.com/8ctopus/php-sand
 git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
 ```
 
-For php versions 8.1, select the image in `docker-compose.yml`. For php 8.0 and 7.4, you need to download an [older version of php-sandbox](https://github.com/8ctopus/php-sandbox/releases/tag/1.2.8) and then choose the correct php version in `docker-compose.yml` as the architecture changed since.
+For php version 8.1, select the image in `docker-compose.yml`. For php 8.0 or 7.4, you need to download an [older version of php-sandbox](https://github.com/8ctopus/php-sandbox/releases/tag/1.2.8) and then choose the correct php version in `docker-compose.yml` as the architecture changed since.
 
 ## start coding
 
