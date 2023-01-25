@@ -19,13 +19,13 @@ A super lightweight LAMP (Linux, Apache, MySQL, PHP) php development environment
 The setup consists of 2 Docker images with a combined size of approximately 110 MB.
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
-    - Apache 2.4.54 with SSL
-    - php-fpm 8.2
+    - Apache 2.4.55 with SSL
+    - php-fpm 8.2.1
     - Xdebug 3.2.0 - debugger and profiler
     - [SPX prolifer dev-master](https://github.com/NoiseByNorthwest/php-spx)
-    - composer 2.4.4
+    - composer 2.5.1
     - zsh 5.9
-    - Alpine edge
+    - Alpine 3.17.1 with edge repositories
 
 - database server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/mariadb-alpine?sort=semver)
     - MariaDB 10.6.11
