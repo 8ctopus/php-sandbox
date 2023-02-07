@@ -8,6 +8,7 @@
 !/sites/*/logs/.gitkeep
 /sites/*/ssl/*
 !/sites/*/ssl/.gitkeep
+/sites/*/html/composer.lock
 /sites/*/html/vendor/*
 /sites/generate-ssl.sh
 
