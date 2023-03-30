@@ -132,10 +132,14 @@ Profiles are stored in the `log` directory and can be analyzed with tools such a
 
 ## Code cleanup
 
+[PHP Coding Standards Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer) is a tool to automatically fix PHP coding standards issues.
+
     cd sites/localhost/html
     composer fix(-risky)
 
 ## Check code for issues
+
+[PHPStan](https://github.com/phpstan/phpstan) is a PHP static analysis tool, it can discover bugs in your code without running it
 
     cd sites/localhost/html
     composer phpstan
