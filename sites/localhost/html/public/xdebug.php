@@ -14,12 +14,12 @@ echo "<p>REMOTE ADDR: {$_SERVER['REMOTE_ADDR']}</p>\n";
 
 class Strings
 {
-    public static function fix_string($a): void
+    public static function fix_string($a) : void
     {
         echo xdebug_call_class(0) . '::' . xdebug_call_function(0) . ' is called at ' . xdebug_call_file(0) . ':' . xdebug_call_line(0);
     }
 
-    public static function fix_strings(array $a): void
+    public static function fix_strings(array $a) : void
     {
         foreach ($a as $element) {
             self::fix_string($a);
