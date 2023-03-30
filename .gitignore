@@ -14,3 +14,4 @@
 
 # other
 /*.sublime-workspace
+.php-cs-fixer.cache

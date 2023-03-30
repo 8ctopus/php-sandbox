@@ -1,7 +1,8 @@
 {
     "name": "8ctopus/php-sandbox",
-    "type": "project",
     "description": "A php sandbox for learning, testing and debugging",
+    "type": "project",
+    "license": "MIT",
     "authors": [
         {
             "name": "8ctopus",
@@ -13,6 +14,16 @@
         "dompdf/dompdf": "^2.0.2"
     },
     "require-dev": {
-        "8ctopus/php-spx-stubs": "^1.0"
+        "roave/security-advisories": "dev-latest",
+        "8ctopus/php-spx-stubs": "^1.0",
+        "friendsofphp/php-cs-fixer": "^3.4",
+        "phpstan/phpstan": "^1.4"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "fix": "php-cs-fixer fix --verbose",
+        "fix-risky": "php-cs-fixer fix --allow-risky=yes --verbose",
+        "phpstan": "phpstan analyse --level 9 src"
     }
 }

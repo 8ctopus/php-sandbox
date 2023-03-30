@@ -130,6 +130,16 @@ Profiles are stored in the `log` directory and can be analyzed with tools such a
 - Run the script to profile
 - Refresh the SPX control panel tab and the report will be available at the bottom of the screen. Click it to show the report in a new tab.
 
+## Code cleanup
+
+    cd sites/localhost/html
+    composer fix(-risky)
+
+## Check code for issues
+
+    cd sites/localhost/html
+    composer phpstan
+
 ## Sublime Text
 
 If you like Sublime Text, checkout the [configuration I'm using](https://github.com/8ctopus/sublime-text-config).
