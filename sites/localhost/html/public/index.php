@@ -15,7 +15,7 @@ $it = new RecursiveDirectoryIterator(__DIR__, FilesystemIterator::SKIP_DOTS);
 
 while ($it->valid()) {
     if (!$it->isDot()) {
-        $file = $it->getSubPath() .'/'. $it->getSubPathName();
+        $file = $it->getSubPath() . '/' . $it->getSubPathName();
 
         switch ($it->getSubPathName()) {
             case 'ajax.php':

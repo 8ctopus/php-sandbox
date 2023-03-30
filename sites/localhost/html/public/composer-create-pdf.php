@@ -14,7 +14,7 @@ $autoLoad = '../vendor/autoload.php';
 if (!file_exists($autoLoad)) {
     header('Content-type: text');
 
-    echo <<<TXT
+    echo <<<'TXT'
         please run and refresh the page:
 
         docker exec -it sandbox zsh
@@ -30,7 +30,7 @@ require_once $autoLoad;
 
 // create whoops object
 $whoops = new \Whoops\Run();
-$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
 $whoops->register();
 
 // create pdf engine

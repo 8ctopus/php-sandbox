@@ -6,10 +6,9 @@
 
 declare(strict_types=1);
 
-if (isset($_SERVER['PHP_AUTH_USER']) && isset($_SERVER['PHP_AUTH_PW'])) {
+if (isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW'])) {
     require_once '../header.php';
     echo '<p>You\'re authorized.</p>';
-}
-else {
+} else {
     header('WWW-Authenticate: Basic');
 }

@@ -2,6 +2,7 @@
 
 /**
  * Test php magic methods
+ *
  * @note https://www.php.net/manual/en/language.oop5.magic.php
  */
 
@@ -28,4 +29,3 @@ $a = new magic();
 $a->test('hello', 'world');
 
 $a(1);
-

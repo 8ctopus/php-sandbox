@@ -11,7 +11,7 @@ $autoLoad = '../vendor/autoload.php';
 if (!file_exists($autoLoad)) {
     header('Content-type: text');
 
-    echo <<<TXT
+    echo <<<'TXT'
         please run and refresh the page:
 
         docker exec -it sandbox zsh
@@ -27,7 +27,7 @@ require_once $autoLoad;
 
 // create whoops object
 $whoops = new \Whoops\Run();
-$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
 $whoops->register();
 
 require_once '../header.php';
@@ -50,14 +50,14 @@ $db = new PDO("mysql:host={$params['host']};dbname={$params['database']};charset
     PDO::ATTR_EMULATE_PREPARES => false,
 ]);
 
-$sql = <<<SQL
+$sql = <<<'SQL'
     DROP TABLE IF EXISTS test
 SQL;
 
 $query = $db->prepare($sql);
 $query->execute();
 
-$sql = <<<SQL
+$sql = <<<'SQL'
     CREATE TABLE test (
         `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
         `birthday` DATE NOT NULL,
@@ -70,7 +70,7 @@ SQL;
 $query = $db->prepare($sql);
 $query->execute();
 
-$sql = <<<SQL
+$sql = <<<'SQL'
     INSERT INTO test
     (birthday, name, salary, boss)
     VALUES (:birthday, :name, :salary, :boss)
@@ -102,7 +102,7 @@ $staff = [
 /**
  * Variable to PDO type
  *
- * @param  mixed  $value
+ * @param mixed $value
  *
  * @return int PDO type
  */
@@ -129,8 +129,8 @@ function typeToParam(mixed $value) : int
 /**
  * Bind values to PDO statement
  *
- * @param  PDOStatement $statement
- * @param  array        $data
+ * @param PDOStatement $statement
+ * @param array        $data
  *
  * @return PDOStatement
  */
@@ -147,7 +147,7 @@ foreach ($staff as $member) {
     bind($query, $member)->execute();
 }
 
-$sql = <<<SQL
+$sql = <<<'SQL'
     SELECT *
     FROM test
 SQL;

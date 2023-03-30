@@ -13,7 +13,7 @@ echo "<h1>test php logging</h1>\n";
 error_log('test php logging');
 
 // deprecated
-define("CONSTANT", "Hello world.", true);
+define('CONSTANT', 'Hello world.', true);
 
 echo "<pre>\n";
 
