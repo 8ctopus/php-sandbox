@@ -1,6 +1,6 @@
 # php sandbox
 
-A super lightweight LAMP (Linux, Apache, MySQL, PHP) php development environment based on Docker.
+A super lightweight LAMP (Linux, Apache, MySQL, PHP) PHP development environment based on Docker.
 
 ## features
 
@@ -11,6 +11,8 @@ A super lightweight LAMP (Linux, Apache, MySQL, PHP) php development environment
 - Apache and php configuration files are exposed on the host for easy edit
 - All changes to configuration files are automatically applied (hot reload)
 - Xdebug is configured for step by step debugging and profiling in Visual Studio Code
+- PHP code cleanup
+- PHP code static analysis
 - Profile php code with [SPX profiler](https://github.com/NoiseByNorthwest/php-spx) or Xdebug
 - Javascript step by step debugging in Visual Studio Code
 
@@ -109,6 +111,20 @@ If `host.docker.internal` does not resolve within the container, update the xdeb
 xdebug.client_host = 192.168.65.2
 ```
 
+## Code cleanup
+
+[PHP Coding Standards Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer) is a tool to automatically fix PHP coding standards issues.
+
+    cd sites/localhost/html
+    composer fix(-risky)
+
+## Check code for issues
+
+[PHPStan](https://github.com/phpstan/phpstan) is a PHP static analysis tool, it can discover bugs in your code without running it
+
+    cd sites/localhost/html
+    composer phpstan
+
 ## Code profiling
 
 Code profiling comes in 2 variants.
@@ -129,20 +145,6 @@ Profiles are stored in the `log` directory and can be analyzed with tools such a
 - Check checkbox `Whether to enable SPX profiler for your current browser session. No performance impact for other clients.`
 - Run the script to profile
 - Refresh the SPX control panel tab and the report will be available at the bottom of the screen. Click it to show the report in a new tab.
-
-## Code cleanup
-
-[PHP Coding Standards Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer) is a tool to automatically fix PHP coding standards issues.
-
-    cd sites/localhost/html
-    composer fix(-risky)
-
-## Check code for issues
-
-[PHPStan](https://github.com/phpstan/phpstan) is a PHP static analysis tool, it can discover bugs in your code without running it
-
-    cd sites/localhost/html
-    composer phpstan
 
 ## Sublime Text
 
