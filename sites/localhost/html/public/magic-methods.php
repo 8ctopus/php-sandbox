@@ -10,13 +10,13 @@ declare(strict_types=1);
 
 class magic
 {
-    public function __call($method, $args)
+    public function __call($method, $args): void
     {
         echo "<p>You called method '{$method}' with argument {$args}.</p>\n";
         //var_dump($key, $args);
     }
 
-    public function __invoke($arg)
+    public function __invoke($arg): void
     {
         echo "<p>You called method __invoke() with argument '{$arg}'.</p>\n";
     }
