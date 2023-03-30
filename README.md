@@ -36,9 +36,7 @@ The setup consists of 2 Docker images with a combined size of approximately 110 
 
 You can either [download the latest version](https://github.com/8ctopus/php-sandbox/tags) or `git clone` the repository.
 
-```sh
-git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
-```
+    git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
 
 For php version 8.1, select the image in `docker-compose.yml`. For php 8.0 or 7.4, you need to download an [older version of php-sandbox](https://github.com/8ctopus/php-sandbox/releases/tag/1.2.8) and then choose the correct php version in `docker-compose.yml` as the architecture changed since.
 
@@ -47,13 +45,13 @@ For php version 8.1, select the image in `docker-compose.yml`. For php 8.0 or 7.
 Start `Docker Desktop` then:
 
 ```sh
-cd php-sandbox
+    cd php-sandbox
 
-# start containers in detached mode on Windows in cmd
-start /B docker-compose up
+    # start containers in detached mode on Windows in cmd
+    start /B docker-compose up
 
-# start containers in detached mode on linux and mac in shell
-docker-compose up &
+    # start containers in detached mode on linux and mac in shell
+    docker-compose up &
 ```
 
 _Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/microsoft/WSL/issues/4739), you need to use the legacy Hyper-V.
@@ -131,6 +129,10 @@ Profiles are stored in the `log` directory and can be analyzed with tools such a
 - Check checkbox `Whether to enable SPX profiler for your current browser session. No performance impact for other clients.`
 - Run the script to profile
 - Refresh the SPX control panel tab and the report will be available at the bottom of the screen. Click it to show the report in a new tab.
+
+## Sublime Text
+
+If you like Sublime Text, checkout the [configuration I'm using](https://github.com/8ctopus/sublime-text-config).
 
 ## database access
 
