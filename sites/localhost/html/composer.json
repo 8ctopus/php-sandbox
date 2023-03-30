@@ -11,5 +11,8 @@
     "require": {
         "filp/whoops": "^2.14",
         "dompdf/dompdf": "^2.0.2"
+    },
+    "require-dev": {
+        "8ctopus/php-spx-stubs": "^1.0"
     }
 }
