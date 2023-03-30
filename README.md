@@ -46,7 +46,6 @@ For php version 8.1, select the image in `docker-compose.yml`. For older php ver
 
 Start `Docker Desktop` then:
 
-```sh
     cd php-sandbox
 
     # start containers in detached mode on Windows in cmd
@@ -54,7 +53,6 @@ Start `Docker Desktop` then:
 
     # start containers in detached mode on linux and mac in shell
     docker-compose up &
-```
 
 _Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/microsoft/WSL/issues/4739), you need to use the legacy Hyper-V.
 
@@ -152,7 +150,7 @@ If you like Sublime Text, checkout the [configuration I'm using](https://github.
 
 ## database access
 
-You can connect to the database using your favorite MySQL client (on Windows, HeidiSQL for example)
+You can connect to the database using your favorite MySQL client (on Windows, [HeidiSQL](https://github.com/HeidiSQL/HeidiSQL) for example)
 
     hostname: localhost / sandbox-db
     user: root
