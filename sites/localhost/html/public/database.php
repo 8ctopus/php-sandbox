@@ -99,6 +99,45 @@ $staff = [
     ],
 ];
 
+
+foreach ($staff as $member) {
+    bindValues($query, $member)->execute();
+}
+
+$sql = <<<'SQL'
+    SELECT *
+    FROM test
+SQL;
+
+$query = $db->prepare($sql);
+$query->execute();
+
+while ($row = $query->fetch()) {
+    echo "<li>{$row['id']} {$row['birthday']} {$row['name']} {$row['salary']} {$row['boss']}</li>\n";
+}
+
+echo "</ul>\n";
+echo "<h1>Test database - OK!<h1>\n";
+
+require_once '../footer.php';
+
+/**
+ * Bind values to PDO statement
+ *
+ * @param PDOStatement $statement
+ * @param array        $data
+ *
+ * @return PDOStatement
+ */
+function bindValues(PDOStatement $statement, array $data) : PDOStatement
+{
+    foreach ($data as $key => $value) {
+        $statement->bindValue($key, $value, typeToParam($value));
+    }
+
+    return $statement;
+}
+
 /**
  * Variable to PDO type
  *
@@ -125,41 +164,3 @@ function typeToParam(mixed $value) : int
             throw new Exception("unsupported type - {$type}");
     }
 }
-
-/**
- * Bind values to PDO statement
- *
- * @param PDOStatement $statement
- * @param array        $data
- *
- * @return PDOStatement
- */
-function bind(PDOStatement $statement, array $data) : PDOStatement
-{
-    foreach ($data as $key => $value) {
-        $statement->bindValue($key, $value, typeToParam($value));
-    }
-
-    return $statement;
-}
-
-foreach ($staff as $member) {
-    bind($query, $member)->execute();
-}
-
-$sql = <<<'SQL'
-    SELECT *
-    FROM test
-SQL;
-
-$query = $db->prepare($sql);
-$query->execute();
-
-while ($row = $query->fetch()) {
-    echo "<li>{$row['id']} {$row['birthday']} {$row['name']} {$row['salary']} {$row['boss']}</li>\n";
-}
-
-echo "</ul>\n";
-echo "<h1>Test database - OK!<h1>\n";
-
-require_once '../footer.php';
