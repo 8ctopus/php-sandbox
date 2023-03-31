@@ -11,7 +11,8 @@
     ],
     "require": {
         "filp/whoops": "^2.14",
-        "dompdf/dompdf": "^2.0.2"
+        "dompdf/dompdf": "^2.0.2",
+        "nette/database": "^3.1"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",
