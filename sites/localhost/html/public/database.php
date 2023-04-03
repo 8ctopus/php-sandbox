@@ -91,11 +91,40 @@ $database->query('INSERT INTO test', $staff);
 
 $rows = $database->query('SELECT * FROM test');
 
+echo "<ul>\n";
+
 foreach ($rows as $row) {
     echo "<li>{$row['id']} {$row['birthday']} {$row['name']} {$row['salary']} {$row['boss']}</li>\n";
 }
 
 echo "</ul>\n";
+echo "<ul>\n";
+
+$sql = <<<SQL
+    SELECT
+        *
+    FROM
+        test
+    WHERE
+        name IS NOT NULL AND
+        ?and
+    ORDER BY
+        ?order
+SQL;
+
+$rows = $database->query($sql, [
+    'id <' => 10,
+    'salary >' => 120,
+], [
+    'id' => false,
+]);
+
+foreach ($rows as $row) {
+    echo "<li>{$row['id']} {$row['birthday']} {$row['name']} {$row['salary']} {$row['boss']}</li>\n";
+}
+
+echo "</ul>\n";
+
 echo "<h1>Test database - OK!<h1>\n";
 
 require_once '../footer.php';
