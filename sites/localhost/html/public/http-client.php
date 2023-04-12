@@ -7,6 +7,7 @@
 declare(strict_types=1);
 
 use HttpSoft\Message\Request;
+use HttpSoft\Message\RequestFactory;
 use Nimbly\Shuttle\Shuttle;
 
 $autoLoad = '../vendor/autoload.php';
@@ -35,8 +36,16 @@ echo
 
     BODY;
 
-// create a http post request
-$request = new Request('POST', 'http://localhost/http-server.php');
+// create a http post request either directly or using a factory
+$factory = true;
+
+if ($factory) {
+    $factory = new RequestFactory();
+
+    $request = $factory->createRequest('POST', 'http://localhost/http-server.php');
+} else {
+    $request = new Request('POST', 'http://localhost/http-server.php');
+}
 
 // create PSR-18 http client
 $shuttle = new Shuttle();

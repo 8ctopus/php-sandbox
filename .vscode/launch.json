@@ -7,7 +7,7 @@
       "request": "launch",
       "port": 9001,
       "log": false,
-      "stopOnEntry": true,
+      "stopOnEntry": false,
       "pathMappings": {
         "/sites/": "${workspaceRoot}/sites/"
       }
