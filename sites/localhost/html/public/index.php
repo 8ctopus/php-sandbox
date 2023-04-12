@@ -6,9 +6,13 @@ require_once '../header.php';
 
 $hostname = gethostname();
 
-echo "<h1>Hello from {$hostname}!</h1>\n";
-echo "<p>Browse the examples:</p>\n";
-echo "<ul>\n";
+echo
+    <<<BODY
+    <h1>Hello from {$hostname}!</h1>
+    <p>Browse the examples:</p>
+    <ul>
+
+    BODY;
 
 // list current directory files
 $it = new RecursiveDirectoryIterator(__DIR__, FilesystemIterator::SKIP_DOTS);
@@ -22,6 +26,7 @@ while ($it->valid()) {
             case 'css':
             case 'favicon.ico':
             case 'index.php':
+            case 'http-server.php':
                 break;
 
             default:
