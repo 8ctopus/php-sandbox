@@ -33,6 +33,7 @@ require $autoLoad;
 $request = ServerRequestCreator::createFromGlobals($_SERVER, $_FILES, $_COOKIE, $_GET, $_POST);
 
 // create response either directly or using a factory
+// the advantage of using the factory is that it is standardized as PSR-17 and therefore you can change the implementation to a different package
 $factory = true;
 
 if ($factory) {

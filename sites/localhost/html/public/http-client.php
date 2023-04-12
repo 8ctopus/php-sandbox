@@ -37,6 +37,7 @@ echo
     BODY;
 
 // create a http post request either directly or using a factory
+// the advantage of using the factory is that it is standardized as PSR-17 and therefore you can change the implementation to a different package
 $factory = true;
 
 if ($factory) {
