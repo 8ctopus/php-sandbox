@@ -7,24 +7,7 @@
 
 declare(strict_types=1);
 
-$autoLoad = '../vendor/autoload.php';
-
-if (!file_exists($autoLoad)) {
-    header('Content-type: text');
-
-    echo <<<'TXT'
-        please run and refresh the page:
-
-        docker exec -it sandbox zsh
-        cd localhost/html
-        composer install
-    TXT;
-
-    exit;
-}
-
-// include composer dependencies
-require_once $autoLoad;
+require_once '../header.php';
 
 // create whoops object
 $whoops = new \Whoops\Run();
@@ -36,3 +19,5 @@ $a = 1;
 $b = 0;
 
 $c = $a / $b;
+
+require_once '../footer.php';

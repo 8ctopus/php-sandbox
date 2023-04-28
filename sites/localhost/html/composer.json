@@ -16,7 +16,8 @@
         "httpsoft/http-message": "^1.0",
         "httpsoft/http-emitter": "^1.0",
         "httpsoft/http-server-request": "^1.0",
-        "nimbly/shuttle": "^1.0"
+        "nimbly/shuttle": "^1.0",
+        "phpunit/php-timer": "^6.0"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",

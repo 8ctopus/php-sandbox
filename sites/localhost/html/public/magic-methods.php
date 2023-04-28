@@ -29,3 +29,5 @@ $a = new magic();
 $a->test('hello', 'world');
 
 $a(1);
+
+require_once '../footer.php';

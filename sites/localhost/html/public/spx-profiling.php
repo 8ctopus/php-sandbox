@@ -16,6 +16,8 @@ echo "<pre>\n";
 
 main();
 
+require_once '../footer.php';
+
 function main() : void
 {
     echo __METHOD__ . '... ' . delta_time() . PHP_EOL . PHP_EOL;

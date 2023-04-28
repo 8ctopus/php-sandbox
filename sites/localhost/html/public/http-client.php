@@ -63,3 +63,5 @@ echo
     {$response->getBody()->getContents()}
 
     BODY;
+
+require_once '../footer.php';

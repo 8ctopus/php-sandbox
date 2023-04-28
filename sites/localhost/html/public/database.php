@@ -123,8 +123,10 @@ foreach ($rows as $row) {
     echo "<li>{$row['id']} {$row['birthday']} {$row['name']} {$row['salary']} {$row['boss']}</li>\n";
 }
 
-echo "</ul>\n";
+echo <<<HTML
+</ul>
+<h1>Test database - OK!</h1>
 
-echo "<h1>Test database - OK!<h1>\n";
+HTML;
 
 require_once '../footer.php';
