@@ -2,6 +2,8 @@
 
 A super lightweight LAMP (Linux, Apache, MySQL, PHP) PHP development environment based on Docker.
 
+![php sandbox screenshot](https://github.com/8ctopus/php-sandbox/raw/master/screenshot.png)
+
 ## features
 
 - Apache, php-fpm and MariaDB
