@@ -12,8 +12,8 @@ use Nimbly\Shuttle\Shuttle;
 
 require_once '../templates.php';
 
-head();
-body();
+Templates::head();
+Templates::body();
 
 echo <<<BODY
 <h2>Client server communication using HTTP requests</h2>
@@ -48,4 +48,4 @@ echo
 
     BODY;
 
-footer();
+Templates::footer();

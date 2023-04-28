@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 require_once '../templates.php';
 
-head();
-body();
+Templates::head();
+Templates::body();
 
 // create whoops object
 $whoops = new \Whoops\Run();
@@ -113,4 +113,4 @@ echo <<<HTML
 
 HTML;
 
-footer();
+Templates::footer();

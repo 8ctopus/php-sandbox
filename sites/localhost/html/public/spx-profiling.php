@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 require_once '../templates.php';
 
-head();
-body();
+Templates::head();
+Templates::body();
 
 echo <<<HTML
 <h1>php SPX profiler</h1>
@@ -20,7 +20,7 @@ HTML;
 
 main();
 
-footer();
+Templates::footer();
 
 
 function main() : void

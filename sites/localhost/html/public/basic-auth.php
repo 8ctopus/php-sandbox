@@ -13,9 +13,9 @@ if (!isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW'])) {
 
 require_once '../templates.php';
 
-head();
-body();
+Templates::head();
+Templates::body();
 
 echo '<p>You\'re authorized.</p>';
 
-footer();
+Templates::footer();

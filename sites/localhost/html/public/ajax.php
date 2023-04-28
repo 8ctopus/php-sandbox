@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 require_once '../templates.php';
 
-head();
+Templates::head();
 
 echo <<<HTML
 <script type="text/javascript">
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 HTML;
 
-body();
+Templates::body();
 
 echo <<<HTML
     <div>
@@ -45,4 +45,4 @@ echo <<<HTML
     </div>
 HTML;
 
-footer();
+Templates::footer();

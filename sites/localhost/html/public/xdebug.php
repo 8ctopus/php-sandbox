@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 require_once '../templates.php';
 
-head();
-body();
+Templates::head();
+Templates::body();
 
 echo <<<HTML
 <h1>Test Xdebug</h1>
@@ -22,7 +22,7 @@ $strings = new XDebugTest();
 
 $strings->test(['Derick', 'Rehans']);
 
-footer();
+Templates::footer();
 
 class XDebugTest
 {

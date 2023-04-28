@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 require_once '../templates.php';
 
-head();
-body();
+Templates::head();
+Templates::body();
 
 $hostname = gethostname();
 
@@ -42,4 +42,4 @@ while ($it->valid()) {
 
 echo "</ul>\n";
 
-footer();
+Templates::footer();

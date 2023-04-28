@@ -10,8 +10,8 @@ declare(strict_types=1);
 
 require_once '../templates.php';
 
-head();
-body();
+Templates::head();
+Templates::body();
 
 class Magic
 {
@@ -33,4 +33,4 @@ $a->test('hello', 'world');
 
 $a(1);
 
-footer();
+Templates::footer();
