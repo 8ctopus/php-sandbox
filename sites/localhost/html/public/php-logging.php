@@ -6,10 +6,12 @@
 
 declare(strict_types=1);
 
-require_once '../templates.php';
+require_once '../autoload.php';
 
-Templates::head();
-Templates::body();
+$page = new Page(true, true);
+
+
+
 
 echo "<h1>test php logging</h1>\n";
 
@@ -21,5 +23,3 @@ define('CONSTANT', 'Hello world.');
 echo "<pre>\n";
 
 echo file_get_contents('/sites/localhost/logs/error_log');
-
-Templates::footer();

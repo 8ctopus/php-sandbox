@@ -6,9 +6,9 @@
 
 declare(strict_types=1);
 
-require_once '../templates.php';
+require_once '../autoload.php';
 
-Templates::head();
+$page = new Page(true);
 
 echo <<<HTML
 <script type="text/javascript">
@@ -37,12 +37,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 HTML;
 
-Templates::body();
+$page->body();
 
 echo <<<HTML
     <div>
         <textarea rows=10 cols=50>hello world</textarea>
     </div>
 HTML;
-
-Templates::footer();

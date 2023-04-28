@@ -2,10 +2,12 @@
 
 declare(strict_types=1);
 
-require_once '../templates.php';
+require_once '../autoload.php';
 
-Templates::head();
-Templates::body();
+$page = new Page(true, true);
+
+
+
 
 $hostname = gethostname();
 
@@ -41,5 +43,3 @@ while ($it->valid()) {
 }
 
 echo "</ul>\n";
-
-Templates::footer();

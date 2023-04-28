@@ -8,18 +8,18 @@
 
 declare(strict_types=1);
 
-require_once '../templates.php';
+require_once '../autoload.php';
 
-Templates::head();
-Templates::body();
+$page = new Page(true, true);
+
+
+
 
 $a = new Magic();
 
 $a->test('hello', 'world');
 
 $a(1);
-
-Templates::footer();
 
 class Magic
 {

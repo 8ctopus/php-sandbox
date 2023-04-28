@@ -11,7 +11,7 @@ use HttpSoft\ServerRequest\ServerRequestCreator;
 use HttpSoft\Message\Response;
 use HttpSoft\Message\ResponseFactory;
 
-require_once '../templates.php';
+require_once '../autoload.php';
 
 // read request from client
 $request = ServerRequestCreator::createFromGlobals($_SERVER, $_FILES, $_COOKIE, $_GET, $_POST);

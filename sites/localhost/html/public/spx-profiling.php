@@ -6,10 +6,9 @@
 
 declare(strict_types=1);
 
-require_once '../templates.php';
+require_once '../autoload.php';
 
-Templates::head();
-Templates::body();
+$page = new Page(true, true);
 
 echo <<<HTML
 <h1>php SPX profiler</h1>
@@ -19,9 +18,6 @@ echo <<<HTML
 HTML;
 
 main();
-
-Templates::footer();
-
 
 function main() : void
 {

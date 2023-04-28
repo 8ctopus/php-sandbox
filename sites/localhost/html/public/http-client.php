@@ -10,10 +10,9 @@ use HttpSoft\Message\Request;
 use HttpSoft\Message\RequestFactory;
 use Nimbly\Shuttle\Shuttle;
 
-require_once '../templates.php';
+require_once '../autoload.php';
 
-Templates::head();
-Templates::body();
+$page = new Page(true, true);
 
 echo <<<BODY
 <h2>Client server communication using HTTP requests</h2>
@@ -47,5 +46,3 @@ echo
     {$response->getBody()->getContents()}
 
     BODY;
-
-Templates::footer();

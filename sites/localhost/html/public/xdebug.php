@@ -6,10 +6,12 @@
 
 declare(strict_types=1);
 
-require_once '../templates.php';
+require_once '../autoload.php';
 
-Templates::head();
-Templates::body();
+$page = new Page(true);
+$page
+    ->header()
+    ->body();
 
 echo <<<HTML
 <h1>Test Xdebug</h1>
@@ -21,8 +23,6 @@ HTML;
 $strings = new XDebugTest();
 
 $strings->test(['Derick', 'Rehans']);
-
-Templates::footer();
 
 class XDebugTest
 {

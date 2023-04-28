@@ -11,11 +11,11 @@ if (!isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW'])) {
     exit;
 }
 
-require_once '../templates.php';
+require_once '../autoload.php';
 
-Templates::head();
-Templates::body();
+$page = new Page(true, true);
+
+
+
 
 echo '<p>You\'re authorized.</p>';
-
-Templates::footer();

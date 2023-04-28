@@ -7,10 +7,9 @@
 
 declare(strict_types=1);
 
-require_once '../templates.php';
+require_once '../autoload.php';
 
-Templates::head();
-Templates::body();
+$page = new Page(true, true);
 
 // create whoops object
 $whoops = new \Whoops\Run();
@@ -22,5 +21,3 @@ $a = 1;
 $b = 0;
 
 $c = $a / $b;
-
-Templates::footer();

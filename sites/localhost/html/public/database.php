@@ -2,10 +2,12 @@
 
 declare(strict_types=1);
 
-require_once '../templates.php';
+require_once '../autoload.php';
 
-Templates::head();
-Templates::body();
+$page = new Page(true, true);
+
+
+
 
 // create whoops object
 $whoops = new \Whoops\Run();
@@ -112,5 +114,3 @@ echo <<<HTML
 <h1>Test database - OK!</h1>
 
 HTML;
-
-Templates::footer();
