@@ -6,7 +6,10 @@
 
 declare(strict_types=1);
 
-require_once '../header.php';
+require_once '../templates.php';
+
+head();
+body();
 
 echo "<h1>test php logging</h1>\n";
 
@@ -19,4 +22,4 @@ echo "<pre>\n";
 
 echo file_get_contents('/sites/localhost/logs/error_log');
 
-require_once '../footer.php';
+footer();

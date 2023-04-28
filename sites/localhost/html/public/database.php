@@ -2,31 +2,15 @@
 
 declare(strict_types=1);
 
-$autoLoad = '../vendor/autoload.php';
+require_once '../templates.php';
 
-if (!file_exists($autoLoad)) {
-    header('Content-type: text');
-
-    echo <<<'TXT'
-        please run and refresh the page:
-
-        docker exec -it sandbox zsh
-        cd localhost/html
-        composer install
-    TXT;
-
-    exit;
-}
-
-// include composer dependencies
-require_once $autoLoad;
+head();
+body();
 
 // create whoops object
 $whoops = new \Whoops\Run();
 $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
 $whoops->register();
-
-require_once '../header.php';
 
 echo "<h1>Test database...</h1>\n";
 
@@ -129,4 +113,4 @@ echo <<<HTML
 
 HTML;
 
-require_once '../footer.php';
+footer();

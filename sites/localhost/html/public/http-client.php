@@ -10,31 +10,15 @@ use HttpSoft\Message\Request;
 use HttpSoft\Message\RequestFactory;
 use Nimbly\Shuttle\Shuttle;
 
-$autoLoad = '../vendor/autoload.php';
+require_once '../templates.php';
 
-if (!file_exists($autoLoad)) {
-    header('Content-type: text');
+head();
+body();
 
-    echo <<<'TXT'
-        please run and refresh the page:
+echo <<<BODY
+<h2>Client server communication using HTTP requests</h2>
 
-        docker exec -it sandbox zsh
-        cd localhost/html
-        composer install
-    TXT;
-
-    exit;
-}
-
-require $autoLoad;
-
-require_once '../header.php';
-
-echo
-    <<<BODY
-    <h2>Client server communication using HTTP requests</h2>
-
-    BODY;
+BODY;
 
 // create a http post request either directly or using a factory
 // the advantage of using the factory is that it is standardized as PSR-17 and therefore you can change the implementation to a different package
@@ -64,4 +48,4 @@ echo
 
     BODY;
 
-require_once '../footer.php';
+footer();

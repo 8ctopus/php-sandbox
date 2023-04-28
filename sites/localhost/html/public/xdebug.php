@@ -6,7 +6,10 @@
 
 declare(strict_types=1);
 
-require_once '../header.php';
+require_once '../templates.php';
+
+head();
+body();
 
 echo <<<HTML
 <h1>Test Xdebug</h1>
@@ -19,7 +22,7 @@ $strings = new XDebugTest();
 
 $strings->test(['Derick', 'Rehans']);
 
-require_once '../footer.php';
+footer();
 
 class XDebugTest
 {

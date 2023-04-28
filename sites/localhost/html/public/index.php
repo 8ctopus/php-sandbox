@@ -2,17 +2,19 @@
 
 declare(strict_types=1);
 
-require_once '../header.php';
+require_once '../templates.php';
+
+head();
+body();
 
 $hostname = gethostname();
 
-echo
-    <<<BODY
-    <h1>Hello from {$hostname}!</h1>
-    <p>Browse the examples:</p>
-    <ul>
+echo <<<BODY
+<h1>Hello from {$hostname}!</h1>
+<p>Browse the examples:</p>
+<ul>
 
-    BODY;
+BODY;
 
 // list current directory files
 $it = new RecursiveDirectoryIterator(__DIR__, FilesystemIterator::SKIP_DOTS);
@@ -22,7 +24,7 @@ while ($it->valid()) {
         $file = $it->getSubPath() . '/' . $it->getSubPathName();
 
         switch ($it->getSubPathName()) {
-            case 'ajax.php':
+            case 'ajax-request.php':
             case 'css':
             case 'favicon.ico':
             case 'index.php':
@@ -40,4 +42,4 @@ while ($it->valid()) {
 
 echo "</ul>\n";
 
-require_once '../footer.php';
+footer();

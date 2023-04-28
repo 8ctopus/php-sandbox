@@ -11,8 +11,11 @@ if (!isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW'])) {
     exit;
 }
 
-require_once '../header.php';
+require_once '../templates.php';
+
+head();
+body();
 
 echo '<p>You\'re authorized.</p>';
 
-require_once '../footer.php';
+footer();

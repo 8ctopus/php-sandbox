@@ -8,7 +8,12 @@
 
 declare(strict_types=1);
 
-class magic
+require_once '../templates.php';
+
+head();
+body();
+
+class Magic
 {
     public function __call($method, $args) : void
     {
@@ -22,12 +27,10 @@ class magic
     }
 }
 
-require_once '../header.php';
-
-$a = new magic();
+$a = new Magic();
 
 $a->test('hello', 'world');
 
 $a(1);
 
-require_once '../footer.php';
+footer();

@@ -6,17 +6,22 @@
 
 declare(strict_types=1);
 
-require_once '../header.php';
+require_once '../templates.php';
 
-echo '<h1>php SPX profiler</h1>';
+head();
+body();
 
-echo "<p><a href=\"/?SPX_KEY=dev&SPX_UI_URI=/\" target=\"_blank\">SPX control panel</a></p>\n";
+echo <<<HTML
+<h1>php SPX profiler</h1>
+<p><a href=\"/?SPX_KEY=dev&SPX_UI_URI=/\" target=\"_blank\">SPX control panel</a></p>
+<pre>
 
-echo "<pre>\n";
+HTML;
 
 main();
 
-require_once '../footer.php';
+footer();
+
 
 function main() : void
 {

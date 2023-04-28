@@ -11,23 +11,7 @@ use HttpSoft\ServerRequest\ServerRequestCreator;
 use HttpSoft\Message\Response;
 use HttpSoft\Message\ResponseFactory;
 
-$autoLoad = '../vendor/autoload.php';
-
-if (!file_exists($autoLoad)) {
-    header('Content-type: text');
-
-    echo <<<'TXT'
-        please run and refresh the page:
-
-        docker exec -it sandbox zsh
-        cd localhost/html
-        composer install
-    TXT;
-
-    exit;
-}
-
-require $autoLoad;
+require_once '../templates.php';
 
 // read request from client
 $request = ServerRequestCreator::createFromGlobals($_SERVER, $_FILES, $_COOKIE, $_GET, $_POST);
@@ -45,13 +29,12 @@ if ($factory) {
 }
 
 // create response body
-$body =
-    <<<BODY
-    Hello world!
-    request target: {$request->getRequestTarget()}
-    request method: {$request->getMethod()}
+$body = <<<BODY
+Hello world!
+request target: {$request->getRequestTarget()}
+request method: {$request->getMethod()}
 
-    BODY;
+BODY;
 
 $response
     ->getBody()

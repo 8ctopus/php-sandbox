@@ -7,7 +7,10 @@
 
 declare(strict_types=1);
 
-require_once '../header.php';
+require_once '../templates.php';
+
+head();
+body();
 
 // create whoops object
 $whoops = new \Whoops\Run();
@@ -20,4 +23,4 @@ $b = 0;
 
 $c = $a / $b;
 
-require_once '../footer.php';
+footer();
