@@ -7,6 +7,8 @@
 
 declare(strict_types=1);
 
+namespace App;
+
 use Dompdf\Dompdf;
 
 $autoLoad = '../vendor/autoload.php';

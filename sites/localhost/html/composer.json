@@ -31,5 +31,10 @@
         "fix": "php-cs-fixer fix --verbose",
         "fix-risky": "php-cs-fixer fix --allow-risky=yes --verbose",
         "phpstan": "phpstan analyse --level 9 public"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
     }
 }

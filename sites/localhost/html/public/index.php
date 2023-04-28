@@ -2,12 +2,15 @@
 
 declare(strict_types=1);
 
+namespace App;
+
+use App\Page;
+use FilesystemIterator;
+use RecursiveDirectoryIterator;
+
 require_once '../autoload.php';
 
 $page = new Page(true, true);
-
-
-
 
 $hostname = gethostname();
 

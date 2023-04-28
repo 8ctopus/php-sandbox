@@ -2,16 +2,21 @@
 
 declare(strict_types=1);
 
+namespace App;
+
+use App\Page;
+use DateTime;
+use Nette\Database\Connection;
+use Whoops\Handler\PrettyPageHandler;
+use Whoops\Run as Whoops;
+
 require_once '../autoload.php';
 
 $page = new Page(true, true);
 
-
-
-
 // create whoops object
-$whoops = new \Whoops\Run();
-$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
+$whoops = new Whoops();
+$whoops->pushHandler(new PrettyPageHandler());
 $whoops->register();
 
 echo "<h1>Test database...</h1>\n";
@@ -23,7 +28,7 @@ $params = [
     'pass' => '123',
 ];
 
-$database = new Nette\Database\Connection("mysql:host={$params['host']};dbname={$params['database']};charset=utf8", $params['user'], $params['pass']);
+$database = new Connection("mysql:host={$params['host']};dbname={$params['database']};charset=utf8", $params['user'], $params['pass']);
 
 $database->query('DROP TABLE IF EXISTS test');
 

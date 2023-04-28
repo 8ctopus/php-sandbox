@@ -6,12 +6,11 @@
 
 declare(strict_types=1);
 
+namespace App;
+
 require_once '../autoload.php';
 
-$page = new Page(true);
-$page
-    ->header()
-    ->body();
+$page = new Page(true, true);
 
 echo <<<HTML
 <h1>Test Xdebug</h1>

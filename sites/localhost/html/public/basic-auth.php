@@ -6,6 +6,10 @@
 
 declare(strict_types=1);
 
+namespace App;
+
+use App\Page;
+
 if (!isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW'])) {
     header('WWW-Authenticate: Basic');
     exit;
@@ -14,8 +18,5 @@ if (!isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW'])) {
 require_once '../autoload.php';
 
 $page = new Page(true, true);
-
-
-
 
 echo '<p>You\'re authorized.</p>';

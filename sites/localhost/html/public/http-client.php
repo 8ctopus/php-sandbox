@@ -6,6 +6,9 @@
 
 declare(strict_types=1);
 
+namespace App;
+
+use App\Page;
 use HttpSoft\Message\Request;
 use HttpSoft\Message\RequestFactory;
 use Nimbly\Shuttle\Shuttle;

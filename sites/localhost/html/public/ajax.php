@@ -6,6 +6,10 @@
 
 declare(strict_types=1);
 
+namespace App;
+
+use App\Page;
+
 require_once '../autoload.php';
 
 $page = new Page(true);
@@ -40,6 +44,7 @@ HTML;
 $page->body();
 
 echo <<<HTML
+    <p />
     <div>
         <textarea rows=10 cols=50>hello world</textarea>
     </div>
