@@ -1,12 +1,12 @@
 # php sandbox
 
-A super lightweight LAMP (Linux, Apache, MySQL, PHP) PHP development environment based on Docker.
+A lightweight sandbox for learning, testing and debugging php code based on Docker containers.
 
 ![php sandbox screenshot](https://github.com/8ctopus/php-sandbox/raw/master/screenshot.png)
 
 ## features
 
-- Apache, php-fpm and MariaDB
+- Linux, Apache, php-fpm and MariaDB (LAMP)
 - php 8.2, 8.1, 8.0, 7.4 along with the most commonly used extensions
 - Just works with any domain name and https is configured out of the box
 - Support for multiple virtual hosts
@@ -18,7 +18,7 @@ A super lightweight LAMP (Linux, Apache, MySQL, PHP) PHP development environment
 - Profile php code with [SPX profiler](https://github.com/NoiseByNorthwest/php-spx) or Xdebug
 - Javascript step by step debugging in Visual Studio Code
 
-## setup
+## architecture
 
 The setup consists of 2 Docker images with a combined size of approximately 110 MB.
 
