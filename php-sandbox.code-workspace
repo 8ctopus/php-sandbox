@@ -9,7 +9,7 @@
 			"path": "./sites/localhost/html/"
 		},
         {
-            "name": "test.com",
+            "name": "test",
 			"path": "./sites/test/html/"
 		}
 	]
