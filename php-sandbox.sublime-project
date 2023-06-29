@@ -10,27 +10,8 @@
 			"path": "./sites/localhost/html/"
 		},
         {
-            "name": "test.com",
+            "name": "test",
 			"path": "./sites/test/html/"
 		}
-    ],
-	"settings":
-	{
-		"debug.configurations":
-		[
-			{
-				"hostname": "127.0.0.1",
-				"log": true,
-				"name": "Listen for XDebug",
-				"pathMappings":
-				{
-					"/var/www/site/": "K:\\dev\\github\\php-dev\\dev\\"
-				},
-				"port": 9001,
-				"request": "launch",
-				"stopOnEntry": false,
-				"type": "php"
-			}
-		]
-	}
+    ]
 }
