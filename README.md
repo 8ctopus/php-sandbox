@@ -24,12 +24,12 @@ The setup consists of 2 Docker images with a combined size of approximately 110 
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
     - Apache 2.4.57 with SSL
-    - php-fpm 8.2.5
+    - php-fpm 8.2.8
     - Xdebug 3.2.1 - debugger and profiler
     - [SPX prolifer dev-master](https://github.com/NoiseByNorthwest/php-spx)
-    - composer 2.5.5
+    - composer 2.5.8
     - zsh 5.9
-    - Alpine 3.17.3 with edge repositories
+    - Alpine 3.18.2 with edge repositories
 
 - database server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/mariadb-alpine?sort=semver)
     - MariaDB 10.6.12
@@ -91,7 +91,7 @@ For newly created domains, you will need to create the SSL certificate:
 
 ```sh
 docker-exec -it web zsh
-./generate-ssl.sh test test.com
+selfsign certificate /sites/domain/ssl domain.com,www.domain.com,api.domain.com /sites/config/ssl
 ```
 
 _Note_: Importing the certificate authority creates a security risk since all certificates issued by this new authority are shown as perfectly valid in your browsers.
