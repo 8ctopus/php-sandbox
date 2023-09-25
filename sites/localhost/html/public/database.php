@@ -33,13 +33,13 @@ $database = new Connection("mysql:host={$params['host']};dbname={$params['databa
 $database->query('DROP TABLE IF EXISTS test');
 
 $sql = <<<'SQL'
-    CREATE TABLE test (
-        `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-        `birthday` DATE NOT NULL,
-        `name` VARCHAR(40) NOT NULL,
-        `salary` INT NOT NULL,
-        `boss` BIT NOT NULL
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+CREATE TABLE test (
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `birthday` DATE NOT NULL,
+    `name` VARCHAR(40) NOT NULL,
+    `salary` INT NOT NULL,
+    `boss` BIT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
 SQL;
 
 $database->query($sql);
@@ -92,15 +92,15 @@ echo "</ul>\n";
 echo "<ul>\n";
 
 $sql = <<<SQL
-    SELECT
-        *
-    FROM
-        test
-    WHERE
-        name IS NOT NULL AND
-        ?and
-    ORDER BY
-        ?order
+SELECT
+    *
+FROM
+    test
+WHERE
+    name IS NOT NULL AND
+    ?and
+ORDER BY
+    ?order
 SQL;
 
 $rows = $database->query($sql, [
