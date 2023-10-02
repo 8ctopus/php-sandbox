@@ -46,10 +46,17 @@ class Page
         $this->header = true;
 
         echo <<<HTML
-        <html>
+        <!DOCTYPE html>
+        <html lang="en">
         <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/neat.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/gh/codazoda/neatcss@v1.0.12/neat.css" rel="stylesheet" crossorigin="anonymous" integrity="d5aba09c5ea7ca3260a07edbb3acf62813e607b8c0f01d2580fc1c57103bb643">
+        <style>
+
+        :root {
+          border-top: none;
+        }
+
+        </style>
 
         HTML;
 
