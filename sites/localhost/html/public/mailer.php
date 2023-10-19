@@ -7,8 +7,8 @@ namespace App;
 use App\Page;
 use Exception;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
-use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mime\Email;
 use Whoops\Handler\PrettyPageHandler;
 use Whoops\Run as Whoops;
@@ -23,7 +23,7 @@ $whoops->pushHandler(new PrettyPageHandler());
 $whoops->register();
 
 $email = 'hello@octopuslabs.io';
-$server = "mail.octopuslabs.io";
+$server = 'mail.octopuslabs.io';
 $pass = '';
 
 if (empty($pass)) {
