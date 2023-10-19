@@ -12,7 +12,7 @@ require_once '../autoload.php';
 
 $page = new Page(true, true);
 
-echo <<<HTML
+echo <<<'HTML'
 <h1>php SPX profiler</h1>
 <p><a href="/?SPX_KEY=dev&SPX_UI_URI=/" target="_blank">SPX control panel</a></p>
 <pre>

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App;
 
-use SebastianBergmann\Timer\Timer;
 use SebastianBergmann\Timer\ResourceUsageFormatter;
+use SebastianBergmann\Timer\Timer;
 
 class Page
 {
@@ -45,7 +45,7 @@ class Page
 
         $this->header = true;
 
-        echo <<<HTML
+        echo <<<'HTML'
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -92,7 +92,7 @@ class Page
 
         $this->footer = true;
 
-        $elapsed = (new ResourceUsageFormatter)->resourceUsageSinceStartOfRequest();
+        $elapsed = (new ResourceUsageFormatter())->resourceUsageSinceStartOfRequest();
 
         echo <<<HTML
             </pre>

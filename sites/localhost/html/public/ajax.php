@@ -14,7 +14,7 @@ require_once '../autoload.php';
 
 $page = new Page(true);
 
-echo <<<HTML
+echo <<<'HTML'
 <script type="text/javascript">
 
 // wait for html to be loaded
@@ -43,7 +43,7 @@ HTML;
 
 $page->body();
 
-echo <<<HTML
+echo <<<'HTML'
     <p />
     <div>
         <textarea rows=10 cols=50>hello world</textarea>

@@ -17,7 +17,7 @@ require_once '../autoload.php';
 
 $page = new Page(true, true);
 
-echo <<<BODY
+echo <<<'BODY'
 <h2>Client server communication using HTTP requests</h2>
 
 BODY;
@@ -41,8 +41,7 @@ $shuttle = new Shuttle();
 $response = $shuttle->sendRequest($request);
 
 // process server response
-echo
-    <<<BODY
+echo <<<BODY
     <pre>
     status code: {$response->getStatusCode()}
     response body:

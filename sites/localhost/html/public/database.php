@@ -73,7 +73,6 @@ for ($i = 0; $i < 12; ++$i) {
 echo count($staff);
 */
 
-
 //\spx_profiler_start();
 
 $database->query('INSERT INTO test', $staff);
@@ -91,7 +90,7 @@ foreach ($rows as $row) {
 echo "</ul>\n";
 echo "<ul>\n";
 
-$sql = <<<SQL
+$sql = <<<'SQL'
 SELECT
     *
 FROM
@@ -114,7 +113,7 @@ foreach ($rows as $row) {
     echo "<li>{$row['id']} {$row['birthday']} {$row['name']} {$row['salary']} {$row['boss']}</li>\n";
 }
 
-echo <<<HTML
+echo <<<'HTML'
 </ul>
 <h1>Test database - OK!</h1>
 

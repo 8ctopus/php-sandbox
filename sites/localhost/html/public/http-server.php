@@ -7,9 +7,9 @@
 declare(strict_types=1);
 
 use HttpSoft\Emitter\SapiEmitter;
-use HttpSoft\ServerRequest\ServerRequestCreator;
 use HttpSoft\Message\Response;
 use HttpSoft\Message\ResponseFactory;
+use HttpSoft\ServerRequest\ServerRequestCreator;
 
 require_once '../autoload.php';
 
