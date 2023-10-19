@@ -29,6 +29,7 @@ $fixer = (new PhpCsFixer\Config('Sandbox', 'Sandbox style guide'))
         'multiline_whitespace_before_semicolons' => false,
         'no_empty_comment' => false,
         'no_superfluous_phpdoc_tags' => false,
+        'no_unused_imports' => false,
         'no_useless_else' => false,
         'phpdoc_add_missing_param_annotation' => true,
         'phpdoc_no_empty_return' => false,
