@@ -17,7 +17,8 @@
         "httpsoft/http-emitter": "^1.0",
         "httpsoft/http-server-request": "^1.0",
         "nimbly/shuttle": "^1.0",
-        "phpunit/php-timer": "^6.0"
+        "phpunit/php-timer": "^6.0",
+        "symfony/mailer": "^6.3"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",
