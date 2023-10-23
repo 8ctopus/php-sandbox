@@ -23,13 +23,13 @@ A lightweight sandbox for learning, testing and debugging php code based on Dock
 The setup consists of 2 Docker images with a combined size of approximately 110 MB.
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
-    - Apache 2.4.57 with SSL
-    - php-fpm 8.2.10
-    - Xdebug 3.2.2 - debugger and profiler
+    - Apache 2.4.58 with SSL
+    - php-fpm 8.2.11
+    - Xdebug 3.3.0 alpha 3 - debugger and profiler
     - [SPX prolifer dev-master](https://github.com/NoiseByNorthwest/php-spx)
-    - composer 2.5.8
+    - composer 2.6.5
     - zsh 5.9
-    - Alpine 3.18.3 with edge repositories
+    - Alpine 3.18.4 with edge repositories
 
 - database server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/mariadb-alpine?sort=semver)
     - MariaDB 10.6.12
