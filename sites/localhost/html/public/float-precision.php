@@ -2,8 +2,6 @@
 
 /**
  * Floating point precision example
- * https://www.php.net/manual/en/language.types.float.php
- * https://floating-point-gui.de/
  */
 
 declare(strict_types=1);
@@ -25,26 +23,48 @@ $whoops->register();
 
 echo <<<'BODY'
 <h2>Floating point precision</h2>
+<p>
+    Interesting articles about floating point precision
+    <ul>
+        <li> https://www.php.net/manual/en/language.types.float.php </li>
+        <li> https://floating-point-gui.de/ </li>
+    </ul>
+</p>
 <pre>
 BODY;
 
-$number1 = 0.1;
-$number2 = 0.7;
+$items = [
+    [
+        'number1' => 0.1,
+        'number2' => 0.3,
+        'expected' => 0.4,
+    ],
+    [
+        'number1' => 0.1,
+        'number2' => 0.7,
+        'expected' => 0.8,
+    ],
+];
 
-$expected = 0.8;
-$total = $number1 + $number2;
+foreach ($items as $item) {
+    $number1 = $item['number1'];
+    $number2 = $item['number2'];
+    $expected = $item['expected'];
 
-if ($total === $expected) {
-    echo "{$number1} + {$number2} === {$expected}\n";
-} else {
-    echo "{$number1} + {$number2} !== {$expected}\n";
+    $total = $number1 + $number2;
 
-    $difference = $expected - $total;
-    echo "difference: {$difference}\n\n";
-}
+    if ($total === $expected) {
+        echo "{$number1} + {$number2} === {$expected}\n\n";
+    } else {
+        echo "{$number1} + {$number2} !== {$expected}\n";
 
-if (round($total, 3) === round($expected, 3)) {
-    echo 'round($total, 3) === round($expected, 3)';
-} else {
-    echo 'round($total, 3) !== round($expected, 3)';
+        $difference = $expected - $total;
+        echo "difference: {$difference}\n";
+
+        if (round($total, 3) === round($expected, 3)) {
+            echo "round(\$total, 3) === round(\$expected, 3)\n";
+        } else {
+            echo "round(\$total, 3) !== round(\$expected, 3)\n";
+        }
+    }
 }
