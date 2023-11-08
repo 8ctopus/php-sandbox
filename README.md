@@ -42,7 +42,7 @@ You can either [download the latest version](https://github.com/8ctopus/php-sand
 
     git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
 
-For php version 8.1, select the image in `docker-compose.yml`. For older php version, you need to download an [older version of php-sandbox](https://github.com/8ctopus/php-sandbox/releases/tag/1.2.8) and then choose the correct php version in `docker-compose.yml` as the architecture changed since.
+For php version 8.2 or 8.1, select the image in `docker-compose.yml`. For older php version, you need to download an [older version of php-sandbox](https://github.com/8ctopus/php-sandbox/releases/tag/1.2.8) and then choose the correct php version in `docker-compose.yml` as the architecture changed since.
 
 ## start coding
 
