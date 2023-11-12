@@ -17,11 +17,11 @@ if (!file_exists($autoLoad)) {
     header('Content-type: text');
 
     echo <<<'TXT'
-        please run and refresh the page:
+    please run and refresh the page:
 
-        docker exec -it sandbox zsh
-        cd localhost/html
-        composer install
+    docker exec -it sandbox zsh
+    cd localhost/html
+    composer install
     TXT;
 
     exit;
