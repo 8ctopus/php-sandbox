@@ -47,6 +47,7 @@ class User implements Stringable
         return $this;
     }
 
+    // serialize and unserialize methods are optional, they only allow to have better control about what information is serialized
     public function __serialize() : array
     {
         return [
@@ -70,17 +71,17 @@ class User implements Stringable
 session_start();
 
 if (array_key_exists('user', $_SESSION)) {
-    // user object is automatically unserialized
+    // user object is automatically unserialized and created
     $user = $_SESSION['user'];
 
     echo $user;
 } else {
-    echo 'no user, create user in session. Refresh the page to view the user.';
+    echo 'No user in session, creating one. Refresh the page to view the user.';
 
     $user = (new User())
         ->setFirstName('John')
         ->setLastName('Doe');
 
-    // user is automatically serialized
+    // user is automatically serialized and stored in the session
     $_SESSION['user'] = $user;
 }
