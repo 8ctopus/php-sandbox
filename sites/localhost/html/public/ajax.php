@@ -12,6 +12,12 @@ use App\Page;
 
 require_once '../autoload.php';
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // ajax request
+    echo 'in ajax!';
+    return;
+}
+
 $page = new Page(true);
 
 echo <<<'HTML'
@@ -24,8 +30,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 async function ajax()
 {
-    // http get request
-    const response = await fetch('/ajax-request.php');
+    const response = await fetch('/ajax.php', {
+      method: 'POST',
+    });
 
     let text;
 
@@ -50,6 +57,6 @@ $page->body();
 echo <<<'HTML'
 <h1> Ajax example </h1>
 <div>
-    <textarea rows=10 cols=50>hello world</textarea>
+    <textarea rows=10 cols=50>hello world </textarea>
 </div>
 HTML;
