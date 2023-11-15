@@ -12,8 +12,8 @@ services:
       # save mariadb databases to named volume
       - database:/var/lib/mysql/
   web:
-    # php 8.3.0 RC5
-    image: 8ct8pus/apache-php-fpm-alpine:php8.3.0RC5
+    # php 8.3.0 RC6
+    image: 8ct8pus/apache-php-fpm-alpine:php8.3.0RC6
     # php 8.2.11 with virtual hosts with new self-signed certificates generator
     #image: 8ct8pus/apache-php-fpm-alpine:2.1.3
     # php 8.2.10 with virtual hosts with new self-signed certificates generator
