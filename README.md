@@ -146,10 +146,6 @@ Profiles are stored in the `log` directory and can be analyzed with tools such a
 - Run the script to profile
 - Refresh the SPX control panel tab and the report will be available at the bottom of the screen. Click it to show the report in a new tab.
 
-## Sublime Text
-
-If you like Sublime Text, checkout the [configuration I'm using](https://github.com/8ctopus/sublime-text-config).
-
 ## database access
 
 You can connect to the database using your favorite MySQL client (on Windows, [HeidiSQL](https://github.com/HeidiSQL/HeidiSQL) for example)
@@ -204,6 +200,10 @@ docker commit sandbox sandbox-curl:dev
 ```
 
 To use this image, update the reference in `docker-compose.yml`.
+
+## Sublime Text
+
+If you like Sublime Text, checkout the [configuration I'm using](https://github.com/8ctopus/sublime-text-config).
 
 ## credits
 
