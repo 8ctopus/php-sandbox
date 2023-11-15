@@ -18,10 +18,12 @@ echo <<<'HTML'
 <script type="text/javascript">
 
 // wait for html to be loaded
-document.addEventListener('DOMContentLoaded', async () => {
-    // get textarea element
-    const output = document.querySelector('textarea');
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(ajax, 2000);
+});
 
+async function ajax()
+{
     // http get request
     const response = await fetch('/ajax-request.php');
 
@@ -33,9 +35,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         text = 'ajax error';
     }
 
-    // update text
+    // update textarea text
+    const output = document.querySelector('textarea');
+
     output.innerHTML += text;
-});
+}
 
 </script>
 
@@ -44,7 +48,7 @@ HTML;
 $page->body();
 
 echo <<<'HTML'
-<p />
+<h1> Ajax example </h1>
 <div>
     <textarea rows=10 cols=50>hello world</textarea>
 </div>
