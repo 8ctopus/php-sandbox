@@ -18,19 +18,19 @@ echo <<<'HTML'
 <script type="text/javascript">
 
 // wait for html to be loaded
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener('DOMContentLoaded', async () => {
     // get textarea element
-    const output = document.querySelector("textarea");
+    const output = document.querySelector('textarea');
 
     // http get request
-    const response = await fetch("/ajax-request.php");
+    const response = await fetch('/ajax-request.php');
 
     let text;
 
     if (response.ok) {
         text = await response.text();
     } else {
-        text = "ajax error";
+        text = 'ajax error';
     }
 
     // update text
@@ -44,8 +44,8 @@ HTML;
 $page->body();
 
 echo <<<'HTML'
-    <p />
-    <div>
-        <textarea rows=10 cols=50>hello world</textarea>
-    </div>
+<p />
+<div>
+    <textarea rows=10 cols=50>hello world</textarea>
+</div>
 HTML;
