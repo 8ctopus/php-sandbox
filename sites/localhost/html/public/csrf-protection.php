@@ -103,4 +103,5 @@ function post()
     $_SESSION['users'][] = $_POST['name'];
     unset($_SESSION['csrf']);
     http_response_code(200);
+    header('refresh: 0;');
 }
