@@ -18,7 +18,7 @@ echo <<<'HTML'
 <script type="text/javascript">
 
 // wait for html to be loaded
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
     setTimeout(ajax, 2000);
 });
 
