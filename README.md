@@ -7,7 +7,7 @@ A lightweight sandbox for learning, testing and debugging php code based on Dock
 ## features
 
 - Linux, Apache, php-fpm and MariaDB (LAMP)
-- php 8.3.0 RC6, 8.2, 8.1, 8.0, 7.4 along with the most commonly used extensions
+- php 8.3, 8.2, 8.1, 8.0, 7.4 along with the most commonly used extensions
 - Just works with any domain name and https is configured out of the box
 - Support for multiple virtual hosts
 - Apache and php configuration files are exposed on the host for easy edit
@@ -24,12 +24,12 @@ The setup consists of 2 Docker images with a combined size of approximately 110 
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
     - Apache 2.4.58 with SSL
-    - php-fpm 8.3.0 RC6
-    - Xdebug 3.3.0 alpha 3 - debugger and profiler
+    - php-fpm 8.3.0
+    - Xdebug 3.3.0 - debugger and profiler
     - [SPX prolifer dev-master](https://github.com/NoiseByNorthwest/php-spx)
     - composer 2.6.5
     - zsh 5.9
-    - Alpine 3.18.4 with edge repositories
+    - Alpine 3.18.5 with edge repositories
 
 - database server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/mariadb-alpine?sort=semver)
     - MariaDB 10.6.12
