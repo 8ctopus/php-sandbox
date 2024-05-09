@@ -6,17 +6,17 @@ A lightweight `php` sandbox for learning, testing and debugging code.
 
 ## features
 
-- Alpine Linux, Apache, php-fpm and MariaDB (LAMP)
+- `Alpine Linux`, `Apache`, `php-fpm` and `MariaDB` (LAMP)
 - php `8.3`, `8.2`, `8.1`, `8.0`, `7.4` along with the most commonly used extensions
 - Just works with any domain name and https is configured out of the box
 - Support for multiple virtual hosts
-- PHP code cleanup
-- PHP code static analysis
-- Profile php code with [SPX profiler](https://github.com/NoiseByNorthwest/php-spx) or Xdebug
+- php `code cleanup` using `php cs fixer`
+- php code static analysis using `phpmd` and `phpstan`
+- profile php code with [SPX profiler](https://github.com/NoiseByNorthwest/php-spx) or Xdebug
 - Apache and php configuration files are exposed on the host for easy edit
-- All changes to configuration files are automatically applied inside the container (hot reload)
-- Xdebug is configured for step by step debugging and profiling in Visual Studio Code
-- Javascript step by step debugging in Visual Studio Code
+- all changes to configuration files are automatically applied inside the container (hot reload)
+- `Xdebug` is configured for step by step debugging and profiling in Visual Studio Code
+- `javascript` step by step debugging in Visual Studio Code
 
 ## architecture
 
@@ -28,13 +28,13 @@ The setup consists of 2 Docker images with a combined size of approximately 110 
     - `Xdebug` 3.3.2 - debugger and profiler
     - [`SPX` prolifer dev-master](https://github.com/NoiseByNorthwest/php-spx)
     - `composer` 2.6.5
-    - zsh 5.9
-    - Alpine 3.19.1 with edge repositories
+    - `zsh` 5.9
+    - `Alpine` 3.19.1 with edge repositories
 
 - database server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/mariadb-alpine?sort=semver)
-    - MariaDB 10.6.12
-    - zsh 5.9
-    - Alpine 3.17.2
+    - `MariaDB` 10.6.12
+    - `zsh` 5.9
+    - `Alpine` 3.17.2
 
 ## install
 
