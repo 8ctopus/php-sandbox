@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   mariadb:
-    image: 8ct8pus/mariadb-alpine:1.0.11
+    image: 8ct8pus/mariadb-alpine:1.0.12
     container_name: sandbox-db
     ports:
       - 3306:3306
