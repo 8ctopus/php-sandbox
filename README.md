@@ -1,6 +1,6 @@
 # php sandbox
 
-A lightweight `php` sandbox for learning, testing and debugging code.
+A lightweight `php` / `MySQL` sandbox for learning, testing and debugging code.
 
 ![php sandbox screenshot](https://github.com/8ctopus/php-sandbox/raw/master/screenshot.png)
 
