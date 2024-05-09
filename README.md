@@ -11,7 +11,7 @@ A lightweight `php` sandbox for learning, testing and debugging code.
 - Just works with any domain name and https is configured out of the box
 - Support for multiple virtual hosts
 - php `code cleanup` using `php cs fixer`
-- php code static analysis using `phpmd` and `phpstan`
+- php code static analysis using `phpstan`
 - profile php code with [SPX profiler](https://github.com/NoiseByNorthwest/php-spx) or Xdebug
 - Apache and php configuration files are exposed on the host for easy edit
 - all changes to configuration files are automatically applied inside the container (hot reload)
