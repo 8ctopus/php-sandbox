@@ -1,21 +1,21 @@
 # php sandbox
 
-A lightweight sandbox for learning, testing and debugging php code based on Docker containers.
+A lightweight `php` sandbox for learning, testing and debugging code.
 
 ![php sandbox screenshot](https://github.com/8ctopus/php-sandbox/raw/master/screenshot.png)
 
 ## features
 
-- Linux, Apache, php-fpm and MariaDB (LAMP)
-- php 8.3, 8.2, 8.1, 8.0, 7.4 along with the most commonly used extensions
+- Alpine Linux, Apache, php-fpm and MariaDB (LAMP)
+- php `8.3`, `8.2`, `8.1`, `8.0`, `7.4` along with the most commonly used extensions
 - Just works with any domain name and https is configured out of the box
 - Support for multiple virtual hosts
-- Apache and php configuration files are exposed on the host for easy edit
-- All changes to configuration files are automatically applied (hot reload)
-- Xdebug is configured for step by step debugging and profiling in Visual Studio Code
 - PHP code cleanup
 - PHP code static analysis
 - Profile php code with [SPX profiler](https://github.com/NoiseByNorthwest/php-spx) or Xdebug
+- Apache and php configuration files are exposed on the host for easy edit
+- All changes to configuration files are automatically applied inside the container (hot reload)
+- Xdebug is configured for step by step debugging and profiling in Visual Studio Code
 - Javascript step by step debugging in Visual Studio Code
 
 ## architecture
@@ -23,13 +23,13 @@ A lightweight sandbox for learning, testing and debugging php code based on Dock
 The setup consists of 2 Docker images with a combined size of approximately 110 MB.
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
-    - Apache 2.4.58 with SSL
-    - php-fpm 8.3.0
-    - Xdebug 3.3.0 - debugger and profiler
-    - [SPX prolifer dev-master](https://github.com/NoiseByNorthwest/php-spx)
-    - composer 2.6.5
+    - `Apache` 2.4.59 with SSL
+    - `php-fpm` 8.3.7
+    - `Xdebug` 3.3.2 - debugger and profiler
+    - [`SPX` prolifer dev-master](https://github.com/NoiseByNorthwest/php-spx)
+    - `composer` 2.6.5
     - zsh 5.9
-    - Alpine 3.18.5 with edge repositories
+    - Alpine 3.19.1 with edge repositories
 
 - database server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/mariadb-alpine?sort=semver)
     - MariaDB 10.6.12
@@ -42,7 +42,7 @@ You can either [download the latest version](https://github.com/8ctopus/php-sand
 
     git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
 
-For php version 8.2 or 8.1, select the image in `docker-compose.yml`. For older php version, you need to download an [older version of php-sandbox](https://github.com/8ctopus/php-sandbox/releases/tag/1.2.8) and then choose the correct php version in `docker-compose.yml` as the architecture changed since.
+For php `8.2` or `8.1`, select the image in `docker-compose.yml`. For older php version, you need to download an [older version of php-sandbox](https://github.com/8ctopus/php-sandbox/releases/tag/1.2.8) and then choose the correct php version in `docker-compose.yml` as the architecture changed since.
 
 ## start coding
 
@@ -56,11 +56,11 @@ Start `Docker Desktop` then:
     # start containers in detached mode on linux and mac in shell
     docker-compose up &
 
-_Note_: On Windows [hot reload doesn't work with WSL 2](https://github.com/microsoft/WSL/issues/4739), you need to use the legacy Hyper-V.
+_Note_: On Windows [file changes notification to the container doesn't work with the WSL 2 engine](https://github.com/8ctopus/apache-php-fpm-alpine/issues), you need to use the `Hyper-V` engine. Uncheck `Use WSL 2 based engine`. What this means, is that files you update on Windows are not updated inside the container unless you use `Hyper-V`.
 
 ## access sites
 
-There are 2 sites you can access from your browser
+By default, there are 2 sites you can access from your browser
 
     http(s)://localhost/
     http(s)://(www.)test.com/
@@ -111,21 +111,21 @@ If `host.docker.internal` does not resolve within the container, update the xdeb
 xdebug.client_host = 192.168.65.2
 ```
 
-## Code cleanup
+## code cleanup
 
 [PHP Coding Standards Fixer](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer) is a tool to automatically fix PHP coding standards issues.
 
     cd sites/localhost/html
     composer fix(-risky)
 
-## Check code for issues
+## check code for issues
 
 [PHPStan](https://github.com/phpstan/phpstan) is a PHP static analysis tool, it can discover bugs in your code without running it
 
     cd sites/localhost/html
     composer phpstan
 
-## Code profiling
+## code profiling
 
 Code profiling comes in 2 variants.
 
@@ -185,7 +185,7 @@ docker exec -it sandbox zsh
 docker exec -it sandbox-db zsh
 ```
 
-## extend docker image
+## extend the docker image
 
 In this example, we add the `php-curl` extension.
 
