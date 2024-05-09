@@ -127,7 +127,7 @@ xdebug.client_host = 192.168.65.2
 
 ## code profiling
 
-Code profiling comes in 2 variants.
+Code profiling comes in 2 variants: `Xdebug` and `SPX`.
 
 _Note_: Disable Xdebug debugger `xdebug.remote_enable` for accurate measurements.
 
