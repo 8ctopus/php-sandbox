@@ -35,20 +35,21 @@
       "stopOnEntry": true
     },
     {
+      // "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222
       "name": "js attach",
       "type": "chrome",
       "request": "attach",
-      "url": "https://localhost",
+      "url": "http://localhost",
       "port": 9222,
-      "webRoot": "${workspaceFolder}/html"
+      "webRoot": "${workspaceFolder}"
     },
     {
       "name": "js launch",
       "type": "chrome",
       "request": "launch",
-      "url": "https://localhost",
+      "url": "http://localhost",
       "port": 9222,
-      "webRoot": "${workspaceFolder}/html"
+      "webRoot": "${workspaceFolder}"
     }
   ]
 }
