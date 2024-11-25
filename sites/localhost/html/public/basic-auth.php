@@ -12,7 +12,7 @@ use App\Page;
 
 if (!isset($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW'])) {
     header('WWW-Authenticate: Basic');
-    exit;
+    exit();
 }
 
 require_once '../autoload.php';

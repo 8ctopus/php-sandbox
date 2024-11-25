@@ -19,7 +19,7 @@ if (!file_exists($autoLoad)) {
     composer install
     TXT;
 
-    exit;
+    exit();
 }
 
 // include composer dependencies
