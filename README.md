@@ -7,7 +7,7 @@ A lightweight `php` / `MySQL` sandbox for learning, testing and debugging code.
 ## features
 
 - `Alpine Linux`, `Apache`, `php-fpm` and `MariaDB` (LAMP)
-- php `8.3`, `8.2`, `8.1`, `8.0`, `7.4` along with the most commonly used extensions
+- php `8.4`, `8.3`, `8.2`, `8.1`, `8.0`, `7.4` along with the most commonly used extensions
 - Just works with any domain name and https is configured out of the box
 - Support for multiple virtual hosts
 - php `code cleanup` using `php cs fixer`
@@ -24,10 +24,10 @@ The setup consists of 2 Docker images with a combined size of approximately 110 
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
     - `Apache` 2.4.62 with SSL
-    - `php-fpm` 8.3.13 RC1
+    - `php-fpm` 8.4.1
     - `Xdebug` 3.4.0 beta 1 - debugger and profiler
     - [`SPX` prolifer dev-master](https://github.com/NoiseByNorthwest/php-spx)
-    - `composer` 2.8.1
+    - `composer` 2.8.3
     - `zsh` 5.9
     - `Alpine` 3.20.3 with edge repositories
 
@@ -42,7 +42,7 @@ You can either [download the latest version](https://github.com/8ctopus/php-sand
 
     git clone --depth 1 https://github.com/8ctopus/php-sandbox.git
 
-For php `8.2` or `8.1`, select the image in `docker-compose.yml`. For older php version, you need to download an [older version of php-sandbox](https://github.com/8ctopus/php-sandbox/releases/tag/1.2.8) and then choose the correct php version in `docker-compose.yml` as the architecture changed since.
+For php `8.3`, `8.2` or `8.1`, select the image in `docker-compose.yml`. For older php version, you need to download an [older version of php-sandbox](https://github.com/8ctopus/php-sandbox/releases/tag/1.2.8) and then choose the correct php version in `docker-compose.yml` as the architecture changed since.
 
 ## start coding
 
