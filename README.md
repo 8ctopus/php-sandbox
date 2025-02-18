@@ -23,13 +23,13 @@ A lightweight `php` / `MySQL` sandbox for learning, testing and debugging code.
 The setup consists of 2 Docker images with a combined size of approximately 110 MB.
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
-    - `Apache` 2.4.62 with SSL
-    - `php-fpm` 8.4.1
-    - `Xdebug` 3.4.0 beta 1 - debugger and profiler
+    - `Apache` 2.4.63 with SSL
+    - `php-fpm` 8.4.4
+    - `Xdebug` 3.4.1 - debugger and profiler
     - [`SPX` prolifer dev-master](https://github.com/NoiseByNorthwest/php-spx)
-    - `composer` 2.8.3
+    - `composer` 2.8.5
     - `zsh` 5.9
-    - `Alpine` 3.20.3 with edge repositories
+    - `Alpine` 3.21.3 with edge repositories
 
 - database server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/mariadb-alpine?sort=semver)
     - `MariaDB` 11.4.4
