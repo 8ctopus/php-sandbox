@@ -10,8 +10,10 @@ services:
       # save mariadb databases to named volume
       - database:/var/lib/mysql/
   web:
+    # php 8.4.5
+    image: 8ct8pus/apache-php-fpm-alpine:2.4.2
     # php 8.4.4
-    image: 8ct8pus/apache-php-fpm-alpine:2.4.1
+    #image: 8ct8pus/apache-php-fpm-alpine:2.4.1
     # php 8.4.1
     #image: 8ct8pus/apache-php-fpm-alpine:2.4.0
     # php 8.3.17

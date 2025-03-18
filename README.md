@@ -24,10 +24,10 @@ The setup consists of 2 Docker images with a combined size of approximately 110 
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
     - `Apache` 2.4.63 with SSL
-    - `php-fpm` 8.4.4
-    - `Xdebug` 3.4.1 - debugger and profiler
+    - `php-fpm` 8.4.5
+    - `Xdebug` 3.4.2 - debugger and profiler
     - [`SPX` prolifer dev-master](https://github.com/NoiseByNorthwest/php-spx)
-    - `composer` 2.8.5
+    - `composer` 2.8.6
     - `zsh` 5.9
     - `Alpine` 3.21.3 with edge repositories
 
