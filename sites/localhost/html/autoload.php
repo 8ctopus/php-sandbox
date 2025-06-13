@@ -5,13 +5,15 @@ declare(strict_types=1);
 $autoLoad = '../vendor/autoload.php';
 
 if (!file_exists($autoLoad)) {
-    echo <<<'TXT'
+    echo <<<'HTML'
+    <pre>
     please run and refresh the page:
 
     docker exec -it sandbox zsh
     cd localhost/html
     composer install
-    TXT;
+    </pre>
+    HTML;
 
     exit();
 }
