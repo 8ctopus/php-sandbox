@@ -1,6 +1,6 @@
 # php sandbox
 
-A lightweight `php` / `MySQL` sandbox for learning, testing and debugging code.
+A lightweight `php`, `MySQL` and `Apache` sandbox for learning, testing and debugging code.
 
 ![php sandbox screenshot](https://github.com/8ctopus/php-sandbox/raw/master/screenshot.png)
 
@@ -20,16 +20,17 @@ A lightweight `php` / `MySQL` sandbox for learning, testing and debugging code.
 
 ## architecture
 
-The setup consists of 2 Docker images with a combined size of approximately 110 MB.
+The setup consists of 2 Docker images with a combined size of approximately 500 MB.
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
     - `Apache` 2.4.63 with SSL
-    - `php-fpm` 8.4.5
-    - `Xdebug` 3.4.2 - debugger and profiler
-    - [`SPX` prolifer dev-master](https://github.com/NoiseByNorthwest/php-spx)
-    - `composer` 2.8.6
+    - `php-fpm` 8.4.8
+    - `Xdebug` 3.4.3 - debugger and profiler
+    - [`SPX` prolifer 0.4.18](https://github.com/NoiseByNorthwest/php-spx)
+    - [`mailpit`](https://github.com/axllent/mailpit)
+    - `composer` 2.8.9
     - `zsh` 5.9
-    - `Alpine` 3.21.3 with edge repositories
+    - `Alpine` 3.22.0 with edge repositories
 
 - database server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/mariadb-alpine?sort=semver)
     - `MariaDB` 11.4.4
@@ -110,6 +111,12 @@ If `host.docker.internal` does not resolve within the container, update the xdeb
 ```ini
 xdebug.client_host = 192.168.65.2
 ```
+
+## Mailpit
+
+Mailpit catches outgoing emails and displays them in a web interface.
+
+    http://localhost:8025
 
 ## code cleanup
 
