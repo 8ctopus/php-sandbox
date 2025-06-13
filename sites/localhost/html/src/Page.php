@@ -71,7 +71,7 @@ class Page
 
         $this->body = true;
 
-        $content = ($_SERVER['REQUEST_URI'] ?? '') !== '/' ? '<a class="home" href="/">Back home</a>' : '';
+        $content = ($_SERVER['REQUEST_URI'] ?? '') !== '/' ? '<div><a class="home" href="/">Back home</a></div>' : '';
 
         echo <<<HTML
         </head>
