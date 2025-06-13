@@ -6,7 +6,6 @@ namespace App;
 
 use App\Page;
 use Exception;
-use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mime\Email;
@@ -23,6 +22,8 @@ $whoops->pushHandler(new PrettyPageHandler());
 $whoops->register();
 
 $email = 'hello@octopuslabs.io';
+
+/*
 $server = 'mail.octopuslabs.io';
 $pass = '';
 
@@ -31,6 +32,9 @@ if (empty($pass)) {
 }
 
 $transport = Transport::fromDsn("smtp://{$email}:{$pass}@{$server}:25");
+*/
+
+$transport = Transport::fromDsn("sendmail://default");
 
 $mailer = new Mailer($transport);
 
@@ -41,9 +45,8 @@ $email = (new Email())
     ->text('Sending emails is fun again!')
     ->html('<p>See Twig integration for better HTML integration!</p>');
 
-try {
-    $mailer->send($email);
-    echo 'email sent';
-} catch (TransportExceptionInterface $exception) {
-    echo 'email sending failed - ' . $exception->getMessage();
-}
+$mailer->send($email);
+
+?>
+<p> email sent </p>
+<a href="localhost:8025">check mailpit</a>
