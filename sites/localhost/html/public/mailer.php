@@ -55,4 +55,4 @@ $mailer->send($email);
 
 ?>
 <p> emails sent </p>
-<a href="localhost:8025">check mailpit</a>
+<a href="http://localhost:8025">check mailpit</a>
