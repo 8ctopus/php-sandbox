@@ -10,17 +10,17 @@ A lightweight `php`, `MySQL` and `Apache` sandbox for learning, testing and debu
 - php `8.4`, `8.3`, `8.2`, `8.1`, `8.0`, `7.4` along with the most commonly used extensions
 - Just works with any domain name and https is configured out of the box
 - Support for multiple virtual hosts
-- php `code cleanup` using `php cs fixer`
-- php code static analysis using `phpstan`
-- profile php code with [SPX profiler](https://github.com/NoiseByNorthwest/php-spx) or Xdebug
-- Apache and php configuration files are exposed on the host for easy edit
+- code cleanup using `php cs fixer`
+- code static analysis using `phpstan`
+- code profiling with [`SPX profiler`](https://github.com/NoiseByNorthwest/php-spx) or `Xdebug`
+- Apache and php configuration files are exposed on the host for easy editing
 - all changes to configuration files are automatically applied inside the container (hot reload)
 - `Xdebug` is configured for step by step debugging and profiling in Visual Studio Code
 - `javascript` step by step debugging in Visual Studio Code
 
 ## architecture
 
-The setup consists of 2 Docker images with a combined size of approximately 500 MB.
+The setup consists of 2 Docker images with a combined size of approximately 120MB compressed, 500MB uncompressed.
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
     - `Apache` 2.4.63 with SSL
