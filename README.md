@@ -1,6 +1,6 @@
 # php sandbox
 
-A lightweight `php`, `MySQL` and `Apache` sandbox for learning, testing and debugging code.
+A lightweight, Docker-based `PHP` and `MySQL` sandbox environment designed for developers to easily learn, test, and debug PHP code. It supports multiple PHP versions from 7.4 up to 8.4, integrates popular tools like `Xdebug` for step-by-step debugging, `PHPStan` for static code analysis, and `PHP CS Fixer` for code cleanup. The sandbox features a LAMP stack built on `Alpine Linux` with `Apache`, `php-fpm`, and `MariaDB`, offering HTTPS out of the box and support for multiple virtual hosts. Its flexible architecture allows hot reloading of configuration changes and seamless integration with Visual Studio Code, making it ideal for efficient PHP development and profiling in a containerized environment.
 
 ![php sandbox screenshot](https://github.com/8ctopus/php-sandbox/raw/master/screenshot.png)
 
