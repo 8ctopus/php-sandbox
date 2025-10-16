@@ -23,14 +23,14 @@ A lightweight, Docker-based `PHP` and `MySQL` sandbox environment designed for d
 The setup consists of 2 Docker images with a combined size of approximately 120MB compressed, 500MB uncompressed.
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
-    - `Apache` 2.4.63 with SSL
-    - `php-fpm` 8.4.8
-    - `Xdebug` 3.4.3 - debugger and profiler
+    - `Apache` 2.4.65 with SSL
+    - `php-fpm` 8.4.13
+    - `Xdebug` 3.4.6 - debugger and profiler
     - [`SPX` prolifer 0.4.18](https://github.com/NoiseByNorthwest/php-spx)
     - [`mailpit`](https://github.com/axllent/mailpit)
-    - `composer` 2.8.9
+    - `composer` 2.8.12
     - `zsh` 5.9
-    - `Alpine` 3.22.0 with edge repositories
+    - `Alpine` 3.22.2 with edge repositories
 
 - database server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/mariadb-alpine?sort=semver)
     - `MariaDB` 11.4.4
