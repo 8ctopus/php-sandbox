@@ -1,13 +1,13 @@
 # php sandbox
 
-A lightweight, Docker-based `PHP` and `MySQL` sandbox environment designed for developers to easily learn, test, and debug PHP code. It supports multiple PHP versions from 7.4 up to 8.4, integrates popular tools like `Xdebug` for step-by-step debugging, `PHPStan` for static code analysis, and `PHP CS Fixer` for code cleanup. The sandbox features a LAMP stack built on `Alpine Linux` with `Apache`, `php-fpm`, and `MariaDB`, offering HTTPS out of the box and support for multiple virtual hosts. Its flexible architecture allows hot reloading of configuration changes and seamless integration with Visual Studio Code, making it ideal for efficient PHP development and profiling in a containerized environment.
+A lightweight, Docker-based `PHP` and `MySQL` sandbox environment designed for developers to easily learn, test, and debug PHP code. It supports multiple PHP versions from 8.5 to 7.4, integrates popular tools like `Xdebug` for step-by-step debugging, `PHPStan` for static code analysis, and `PHP CS Fixer` for code cleanup. The sandbox features a LAMP stack built on `Alpine Linux` with `Apache`, `php-fpm`, and `MariaDB`, offering HTTPS out of the box and support for multiple virtual hosts. Its flexible architecture allows hot reloading of configuration changes and seamless integration with Visual Studio Code, making it ideal for efficient PHP development and profiling in a containerized environment.
 
 ![php sandbox screenshot](https://github.com/8ctopus/php-sandbox/raw/master/screenshot.png)
 
 ## features
 
 - `Alpine Linux`, `Apache`, `php-fpm` and `MariaDB` (LAMP)
-- php `8.4`, `8.3`, `8.2`, `8.1`, `8.0`, `7.4` along with the most commonly used extensions
+- php `8.5`, `8.4`, `8.3`, `8.2`, `8.1`, `8.0`, `7.4` along with the most commonly used extensions
 - Just works with any domain name and https is configured out of the box
 - Support for multiple virtual hosts
 - code cleanup using `php cs fixer`
@@ -24,7 +24,7 @@ The setup consists of 2 Docker images with a combined size of approximately 120M
 
 - web server ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/8ct8pus/apache-php-fpm-alpine?sort=semver)
     - `Apache` 2.4.65 with SSL
-    - `php-fpm` 8.4.15
+    - `php-fpm` 8.5.0
     - `Xdebug` 3.4.7 - debugger and profiler
     - [`SPX` prolifer 0.4.22](https://github.com/NoiseByNorthwest/php-spx)
     - [`mailpit`](https://github.com/axllent/mailpit)
