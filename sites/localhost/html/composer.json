@@ -11,7 +11,7 @@
     ],
     "require": {
         "filp/whoops": "^2.14",
-        "dompdf/dompdf": "^2.0.2",
+        "dompdf/dompdf": "^3.0",
         "httpsoft/http-message": "^1.0",
         "httpsoft/http-emitter": "^1.0",
         "httpsoft/http-server-request": "^1.0",
@@ -28,7 +28,6 @@
     },
     "replace": {
         "symfony/polyfill-ctype": "*",
-        "symfony/polyfill-intl-idn": "*",
         "symfony/polyfill-mbstring": "*",
         "symfony/polyfill-php72": "*",
         "symfony/polyfill-php73": "*",
